@@ -1,0 +1,17 @@
+{
+  "name": "alpha-grid",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "sass --watch ./agrid/agrid.scss ./agrid/agrid.css",
+    "build": "sass --style=compressed ./agrid/agrid.scss ./agrid/agrid.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "sass": "^1.49.8"
+  }
+}
