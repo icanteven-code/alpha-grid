@@ -1,6 +1,9 @@
 # αGrid
 
-alphaGrid is a very simple and "mostly" configurable tool for 12 Column Grid layouts.
+alphaGrid is a tool for implementing 12 Column Grid layouts. \
+Very simple. \
+Mostly configurable. \
+No dependencies needed, pure css (mostly).
 
 It's implemented via CSS Grid and it's pretty much an "inspired" clone of Bootstrap's own grid layout.
 
