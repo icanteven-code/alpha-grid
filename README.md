@@ -1,5 +1,8 @@
 # αGrid
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/d8cddbf0-a67c-4a0d-a6e7-4745500f75ae/deploy-status)](https://app.netlify.com/sites/alpha-grid/deploys)
+Online example: [alpha-grid.netlify.app](https://alpha-grid.netlify.app/)
+
 alphaGrid is a tool for implementing 12 Column Grid layouts. \
 Very simple. \
 Mostly configurable. \
