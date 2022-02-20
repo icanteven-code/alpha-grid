@@ -1,17 +1,28 @@
 {
   "name": "alpha-grid",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Simple 12 column grid system build on css grid and inspired by Bootstrap ",
+  "main": "dist/agrid.css",
+  "files": [
+    "dist/*"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "sass --watch src/agrid/agrid.scss src/agrid/agrid.css",
-    "build": "sass --style=compressed --no-source-map src/agrid/agrid.scss build/agrid.css && node compress.js",
+    "build": "sass --style=compressed --no-source-map src/agrid/agrid.scss dist/agrid.css && node compress.js",
     "prepare": "husky install"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "12 column grid",
+    "css grid",
+    "grid layout"
+  ],
+  "author": {
+    "name": "Simeon Petrov",
+    "url": "https://github.com/simeon-petrov-5"
+  },
+  "homepage": "https://github.com/icanteven-code/alpha-grid",
+  "license": "MIT",
   "dependencies": {
     "@commitlint/cli": "^16.2.1",
     "@commitlint/config-conventional": "^16.2.1",

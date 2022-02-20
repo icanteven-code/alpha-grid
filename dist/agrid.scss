@@ -1,0 +1,76 @@
+$agrid-column-system: 12;
+$agrid-breakpoints: (
+  "sm": 576px,
+  "md": 768px,
+  "lg": 992px,
+  "xl": 1200px,
+);
+%agrid-col-full-width {
+  grid-column: auto / span 12;
+}
+
+.agrid {
+  --agrid-gap: 0.25rem;
+  --agrid-gap-md: 0.75rem;
+  --agrid-gap-lg: 1rem;
+  --agrid-gap-xl: 1.5rem;
+
+  --agrid-x-padding: 0px;
+  --agrid-x-margin: 0px;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: var(--agrid-gap);
+  padding-inline: var(--agrid-x-padding);
+  margin-inline: var(--agrid-x-margin);
+}
+
+@media (min-width: 768px) {
+  .agrid {
+    --agrid-gap: var(--agrid-gap-md);
+  }
+}
+
+@media (min-width: 992px) {
+  .agrid {
+    --agrid-gap: var(--agrid-gap-lg);
+  }
+}
+
+@media (min-width: 1200px) {
+  .agrid {
+    --agrid-gap: var(--agrid-gap-xl);
+  }
+}
+
+// Generate simple col-span columns
+@mixin generate-base-cols {
+  @for $i from 1 through $agrid-column-system {
+    .acol-#{$i} {
+      grid-column: auto / span $i;
+    }
+  }
+}
+
+// Generate responsive cols - has a fallback for 12 col width
+@mixin generate-resp-cols {
+  @each $key, $value in $agrid-breakpoints {
+    *[class*="col-#{$key}"] {
+      @extend %agrid-col-full-width;
+    }
+
+    @media (min-width: #{$value}) {
+      @for $col-num from 1 through $agrid-column-system {
+        .acol-#{$key}-#{$col-num} {
+          grid-column: auto / span $col-num;
+        }
+      }
+    }
+  }
+}
+
+@mixin init-grid {
+  @include generate-base-cols;
+  @include generate-resp-cols;
+}
+
+@include init-grid;
