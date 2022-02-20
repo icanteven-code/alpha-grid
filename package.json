@@ -1,6 +1,6 @@
 {
   "name": "alpha-grid",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Simple 12 column grid system build on css grid and inspired by Bootstrap ",
   "main": "dist/agrid.css",
   "files": [
@@ -12,7 +12,8 @@
     "build": "yarn build:sass && yarn build:prefix && node compress.js",
     "build:sass": "sass --style=compressed --no-source-map src/agrid/agrid.scss dist/agrid.css",
     "build:prefix": "gulp",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "release": "standard-version"
   },
   "keywords": [
     "12 column grid",
@@ -33,7 +34,8 @@
     "gulp-postcss": "^9.0.1",
     "gulp-sourcemaps": "^3.0.0",
     "postcss": "^8.4.6",
-    "sass": "^1.49.8"
+    "sass": "^1.49.8",
+    "standard-version": "^9.3.2"
   },
   "devDependencies": {
     "husky": "^7.0.0"
