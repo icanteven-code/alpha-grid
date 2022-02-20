@@ -5,24 +5,98 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./styles/reset.css" />
-    <link rel="stylesheet" href="./agrid/agrid.css" />
-    <link rel="stylesheet" href="./styles/examples.css" />
+    <link rel="stylesheet" href="https://unpkg.com/open-props" />
+    <link
+      rel="stylesheet"
+      href="https://raw.githack.com/icanteven-code/alpha-grid/master/build/agrid.css"
+    />
+    <link rel="stylesheet" href="./styles/main.css" />
     <title>Alpha Grid</title>
   </head>
   <body>
-    <ul class="agrid">
-      <li class="acol-sm-2 acol-md-3 acol-lg-4 acol-xl-6">1</li>
-      <li class="acol-sm-2 acol-md-3 acol-lg-4 acol-xl-6">2</li>
-      <li class="acol-sm-2 acol-md-3 acol-lg-4 acol-xl-6">3</li>
-      <li class="acol-sm-2 acol-md-3 acol-lg-4 acol-xl-6">4</li>
-      <li class="acol-sm-2 acol-md-3 acol-lg-4 acol-xl-6">5</li>
-      <li class="acol-sm-2 acol-md-3 acol-lg-4 acol-xl-6">6</li>
-      <li class="acol-sm-2 acol-md-3 acol-lg-4 acol-xl-6">7</li>
-      <li class="acol-sm-2 acol-md-3 acol-lg-4 acol-xl-6">8</li>
-      <li class="acol-sm-2 acol-md-3 acol-lg-4 acol-xl-6">9</li>
-      <li>10</li>
-      <li>11</li>
-      <li>12</li>
-    </ul>
+    <section class="hero">
+      <h1 class="logo"><span>α</span>Grid</h1>
+      <p class="desc">
+        alphaGrid is a tool for implementing 12 Column Grid layouts.<br />
+        Very simple. Mostly configurable. No dependencies needed, pure css
+        (kinda).<br />
+        It's implemented via CSS Grid and it's pretty much an "inspired" clone
+        of Bootstrap's own grid layout.
+      </p>
+    </section>
+    <section class="basic">
+      <h2 class="title">Basic columns</h2>
+
+      <p class="desc">
+        When you set <span class="code">agrid</span> as a class on a container,
+        its children can use the <span class="code">col-</span> classes to
+        control their width, based on how many columns we want them to span
+        over. <br />
+        Available column sizes (classes) - col-1, col-2, col-3, col-4, col-5,
+        col-6, col-7, col-8, col-9, col-10, col-11, col-12.
+      </p>
+
+      <ul class="agrid">
+        <li class="acol-12"><span>.acol-12</span></li>
+
+        <li class="acol-6"><span>.acol-6</span></li>
+        <li class="acol-6"><span>.acol-6</span></li>
+
+        <li class="acol-5"><span>.acol-5</span></li>
+        <li class="acol-2"><span>2</span></li>
+        <li class="acol-5"><span>.acol-5</span></li>
+
+        <li class="acol-4"><span>.acol-4</span></li>
+        <li class="acol-4"><span>.acol-4</span></li>
+        <li class="acol-4"><span>.acol-4</span></li>
+
+        <li class="acol-3"><span>.acol-3</span></li>
+        <li class="acol-3"><span>.acol-3</span></li>
+        <li class="acol-3"><span>.acol-3</span></li>
+        <li class="acol-3"><span>.acol-3</span></li>
+
+        <li class="acol-2"><span>2</span></li>
+        <li class="acol-2"><span>2</span></li>
+        <li class="acol-2"><span>2</span></li>
+        <li class="acol-2"><span>2</span></li>
+        <li class="acol-2"><span>2</span></li>
+        <li class="acol-2"><span>2</span></li>
+
+        <li class="acol-1"><span>1</span></li>
+        <li class="acol-1"><span>1</span></li>
+        <li class="acol-1"><span>1</span></li>
+        <li class="acol-1"><span>1</span></li>
+        <li class="acol-1"><span>1</span></li>
+        <li class="acol-1"><span>1</span></li>
+        <li class="acol-1"><span>1</span></li>
+        <li class="acol-1"><span>1</span></li>
+        <li class="acol-1"><span>1</span></li>
+        <li class="acol-1"><span>1</span></li>
+        <li class="acol-1"><span>1</span></li>
+        <li class="acol-1"><span>1</span></li>
+      </ul>
+    </section>
+
+    <section class="responsive">
+      <h2 class="title">Responsive columns</h2>
+
+      <p class="desc">
+        When you use <span class="code">acol-[sm,md,lg,xl]-[1-12]</span> for
+        your columns, these column spanning sizes will have a certain breakpoint
+        from which they start to work. If the viewport is smaller than the
+        breakpoint we have selected, we use a smaller breakpoint column if
+        provided and if we don't have smaller breakpoints, our element takes a
+        full width, eg. 12 column spaced.
+      </p>
+
+      <ul class="agrid">
+        <li class="acol-sm-2 acol-md-3 acol-lg-4 acol-xl-6">1st</li>
+        <li class="acol-sm-2 acol-md-3 acol-lg-4 acol-xl-6">2nd</li>
+        <li class="acol-sm-2 acol-md-3 acol-lg-4 acol-xl-6">3rd</li>
+        <li class="acol-sm-2 acol-md-3 acol-lg-4 acol-xl-6">4th</li>
+        <li class="acol-sm-2 acol-md-3 acol-lg-4 acol-xl-6">5ft</li>
+        <li class="acol-sm-2 acol-md-3 acol-lg-4 acol-xl-6">6th</li>
+      </ul>
+    </section>
   </body>
 </html>
