@@ -17,11 +17,11 @@ Load the `agrid.css` file in your project:
 
 As a stylesheet link
 ```
-<link rel="stylesheet" href="https://raw.githack.com/icanteven-code/alpha-grid/master/build/agrid.css" />
+<link rel="stylesheet" href="https://raw.githack.com/icanteven-code/alpha-grid/master/dist/agrid.css" />
 ```
 Or via @import
 ```
-@import url('https://raw.githack.com/icanteven-code/alpha-grid/master/build/agrid.css');
+@import url('https://raw.githack.com/icanteven-code/alpha-grid/master/dist/agrid.css');
 ```
 
 ### CSS Classes
