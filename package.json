@@ -9,7 +9,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "sass --watch src/agrid/agrid.scss src/agrid/agrid.css",
-    "build": "sass --style=compressed --no-source-map src/agrid/agrid.scss dist/agrid.css && node compress.js",
+    "build": "yarn build:sass && yarn build:prefix && node compress.js",
+    "build:sass": "sass --style=compressed --no-source-map src/agrid/agrid.scss dist/agrid.css",
+    "build:prefix": "gulp",
     "prepare": "husky install"
   },
   "keywords": [
@@ -26,9 +28,19 @@
   "dependencies": {
     "@commitlint/cli": "^16.2.1",
     "@commitlint/config-conventional": "^16.2.1",
+    "autoprefixer": "^10.4.2",
+    "gulp": "^4.0.2",
+    "gulp-postcss": "^9.0.1",
+    "gulp-sourcemaps": "^3.0.0",
+    "postcss": "^8.4.6",
     "sass": "^1.49.8"
   },
   "devDependencies": {
     "husky": "^7.0.0"
-  }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 10"
+  ]
 }
