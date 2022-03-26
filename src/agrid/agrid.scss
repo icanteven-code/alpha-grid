@@ -68,9 +68,38 @@ $agrid-breakpoints: (
   }
 }
 
+// Generate simple col-span columns
+@mixin generate-base-col-starts {
+  @for $i from 1 through $agrid-column-system {
+    .acol-start-#{$i} {
+      grid-column-start: $i + 1;
+    }
+  }
+}
+
+// Generate responsive cols - has a fallback for 12 col width
+@mixin generate-resp-col-starts {
+  @each $key, $value in $agrid-breakpoints {
+    // *[class*="col-#{$key}-start"] {
+    //   grid-column-start: 1;
+    // }
+
+    @media (min-width: #{$value}) {
+      @for $col-num from 1 through ($agrid-column-system - 1) {
+        .acol-#{$key}-offset-#{$col-num} {
+          grid-column-start: $col-num + 1;
+        }
+      }
+    }
+  }
+}
+
 @mixin init-grid {
   @include generate-base-cols;
+  @include generate-base-col-starts;
+
   @include generate-resp-cols;
+  @include generate-resp-col-starts;
 }
 
 @include init-grid;

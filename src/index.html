@@ -6,10 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./styles/reset.css" />
     <link rel="stylesheet" href="https://unpkg.com/open-props" />
-    <link
-      rel="stylesheet"
-      href="https://raw.githack.com/icanteven-code/alpha-grid/master/dist/agrid.css"
-    />
+    <link rel="stylesheet" href="../dist/agrid.css" />
     <link rel="stylesheet" href="./styles/main.css" />
     <title>Alpha Grid</title>
   </head>
@@ -25,7 +22,7 @@
       </p>
     </section>
     <section class="basic">
-      <h2 class="title">Basic columns</h2>
+      <h2 class="title">Static columns</h2>
 
       <p class="desc">
         When you set <span class="code">agrid</span> as a class on a container,
@@ -96,6 +93,28 @@
         <li class="acol-sm-2 acol-md-3 acol-lg-4 acol-xl-6">4th</li>
         <li class="acol-sm-2 acol-md-3 acol-lg-4 acol-xl-6">5ft</li>
         <li class="acol-sm-2 acol-md-3 acol-lg-4 acol-xl-6">6th</li>
+      </ul>
+    </section>
+
+    <section class="offset">
+      <h2 class="title">Offset columns</h2>
+
+      <p class="desc">
+        When you use
+        <span class="code">acol-[sm,md,lg,xl]-offset-[1-11]</span> for your
+        columns, you define an "offset" or empty space on the left side of your
+        column. This offset space is again calculated by the space of a column.
+        "acol-offset-2" means that you will have an empty space equal to the
+        width of 2 columns left of your targeted element. Offset offers again
+        both static and responsive columns.
+      </p>
+
+      <ul class="agrid">
+        <li class="acol-sm-2 acol-md-3 acol-lg-4 acol-xl-6">1st</li>
+        <li class="acol-sm-2 acol-md-3 acol-lg-4 acol-xl-6">2nd</li>
+        <li class="acol-sm-2 acol-md-3 acol-xl-start-4">3rd</li>
+        <li class="acol-sm-2 acol-md-3">4th</li>
+        <li class="acol-sm-2 acol-md-3">5ft</li>
       </ul>
     </section>
   </body>

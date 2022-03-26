@@ -48,15 +48,17 @@ section {
   margin-bottom: 3rem;
 }
 
-/* Basic */
-.basic .agrid li {
+/* ------------------ */
+/* Basic li item */
+
+.agrid li {
   padding: 0.25rem;
   height: 4rem;
-  background-color: var(--orange-5);
   border-radius: 8px;
   color: var(--gray-9);
-  font-size: var(--font-size-fluid-1);
-  font-weight: var(--font-weight-9);
+  font-size: 1.25rem;
+  font-weight: bold;
+  font-family: monospace;
 
   display: flex;
   justify-content: center;
@@ -66,18 +68,16 @@ section {
 }
 
 /* Basic */
-.responsive .agrid li {
-  padding: 0.25rem;
-  height: 4rem;
-  background-color: var(--lime-5);
-  border-radius: 8px;
-  color: var(--gray-9);
-  font-size: var(--font-size-fluid-1);
-  font-weight: var(--font-weight-9);
+.basic .agrid li {
+  background-color: var(--orange-5);
+}
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  word-break: break-all;
-  text-align: center;
+/* Basic */
+.responsive .agrid li {
+  background-color: var(--lime-5);
+}
+
+/* Offset */
+.offset .agrid li {
+  background-color: var(--teal-5);
 }
