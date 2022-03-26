@@ -54,13 +54,13 @@ $agrid-breakpoints: (
 // Generate responsive cols - has a fallback for 12 col width
 @mixin generate-resp-cols {
   @each $key, $value in $agrid-breakpoints {
-    *[class*="col-#{$key}"] {
+    *[class*="#{$key}\:acol"] {
       @extend %agrid-col-full-width;
     }
 
     @media (min-width: #{$value}) {
       @for $col-num from 1 through $agrid-column-system {
-        .acol-#{$key}-#{$col-num} {
+        .#{$key}\:acol-#{$col-num} {
           grid-column: auto / span $col-num;
         }
       }
@@ -68,25 +68,25 @@ $agrid-breakpoints: (
   }
 }
 
-// Generate simple col-span columns
+// Generate simple col-offset values
 @mixin generate-base-col-starts {
-  @for $i from 1 through $agrid-column-system {
-    .acol-start-#{$i} {
+  @for $i from 1 through ($agrid-column-system - 1) {
+    .acol-offset-#{$i} {
       grid-column-start: $i + 1;
     }
   }
 }
 
-// Generate responsive cols - has a fallback for 12 col width
+// Generate responsive offsets - has a fallback for auto col start
 @mixin generate-resp-col-starts {
   @each $key, $value in $agrid-breakpoints {
-    // *[class*="col-#{$key}-start"] {
-    //   grid-column-start: 1;
-    // }
+    *[class*="#{$key}\:acol-offset"] {
+      grid-column-start: auto;
+    }
 
     @media (min-width: #{$value}) {
       @for $col-num from 1 through ($agrid-column-system - 1) {
-        .acol-#{$key}-offset-#{$col-num} {
+        .#{$key}\:acol-offset-#{$col-num} {
           grid-column-start: $col-num + 1;
         }
       }
