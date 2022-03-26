@@ -94,12 +94,28 @@ $agrid-breakpoints: (
   }
 }
 
+@mixin generate-col-orders {
+  .acol-order-first {
+    order: -1;
+  }
+  .acol-order-last {
+    order: 10;
+  }
+  @for $i from 1 through 11 {
+    .acol-order-#{$i} {
+      order: $i;
+    }
+  }
+}
+
 @mixin init-grid {
   @include generate-base-cols;
   @include generate-base-col-starts;
 
   @include generate-resp-cols;
   @include generate-resp-col-starts;
+
+  @include generate-col-orders;
 }
 
 @include init-grid;

@@ -1,4 +1,4 @@
-*[class*="xl:col"], *[class*="lg:col"], *[class*="md:col"], *[class*="sm:col"] {
+*[class*="xl:acol"], *[class*="lg:acol"], *[class*="md:acol"], *[class*="sm:acol"] {
   grid-column: auto/span 12;
 }
 
@@ -319,201 +319,252 @@
     grid-column: auto/span 12;
   }
 }
-*[class*="sm:col-offset"] {
+*[class*="sm:acol-offset"] {
   grid-column-start: auto;
 }
 
 @media (min-width: 576px) {
-  .sm:acol-offset-1 {
+  .sm\:acol-offset-1 {
     grid-column-start: 2;
   }
 
-  .sm:acol-offset-2 {
+  .sm\:acol-offset-2 {
     grid-column-start: 3;
   }
 
-  .sm:acol-offset-3 {
+  .sm\:acol-offset-3 {
     grid-column-start: 4;
   }
 
-  .sm:acol-offset-4 {
+  .sm\:acol-offset-4 {
     grid-column-start: 5;
   }
 
-  .sm:acol-offset-5 {
+  .sm\:acol-offset-5 {
     grid-column-start: 6;
   }
 
-  .sm:acol-offset-6 {
+  .sm\:acol-offset-6 {
     grid-column-start: 7;
   }
 
-  .sm:acol-offset-7 {
+  .sm\:acol-offset-7 {
     grid-column-start: 8;
   }
 
-  .sm:acol-offset-8 {
+  .sm\:acol-offset-8 {
     grid-column-start: 9;
   }
 
-  .sm:acol-offset-9 {
+  .sm\:acol-offset-9 {
     grid-column-start: 10;
   }
 
-  .sm:acol-offset-10 {
+  .sm\:acol-offset-10 {
     grid-column-start: 11;
   }
 
-  .sm:acol-offset-11 {
+  .sm\:acol-offset-11 {
     grid-column-start: 12;
   }
 }
-*[class*="md:col-offset"] {
+*[class*="md:acol-offset"] {
   grid-column-start: auto;
 }
 
 @media (min-width: 768px) {
-  .md:acol-offset-1 {
+  .md\:acol-offset-1 {
     grid-column-start: 2;
   }
 
-  .md:acol-offset-2 {
+  .md\:acol-offset-2 {
     grid-column-start: 3;
   }
 
-  .md:acol-offset-3 {
+  .md\:acol-offset-3 {
     grid-column-start: 4;
   }
 
-  .md:acol-offset-4 {
+  .md\:acol-offset-4 {
     grid-column-start: 5;
   }
 
-  .md:acol-offset-5 {
+  .md\:acol-offset-5 {
     grid-column-start: 6;
   }
 
-  .md:acol-offset-6 {
+  .md\:acol-offset-6 {
     grid-column-start: 7;
   }
 
-  .md:acol-offset-7 {
+  .md\:acol-offset-7 {
     grid-column-start: 8;
   }
 
-  .md:acol-offset-8 {
+  .md\:acol-offset-8 {
     grid-column-start: 9;
   }
 
-  .md:acol-offset-9 {
+  .md\:acol-offset-9 {
     grid-column-start: 10;
   }
 
-  .md:acol-offset-10 {
+  .md\:acol-offset-10 {
     grid-column-start: 11;
   }
 
-  .md:acol-offset-11 {
+  .md\:acol-offset-11 {
     grid-column-start: 12;
   }
 }
-*[class*="lg:col-offset"] {
+*[class*="lg:acol-offset"] {
   grid-column-start: auto;
 }
 
 @media (min-width: 992px) {
-  .lg:acol-offset-1 {
+  .lg\:acol-offset-1 {
     grid-column-start: 2;
   }
 
-  .lg:acol-offset-2 {
+  .lg\:acol-offset-2 {
     grid-column-start: 3;
   }
 
-  .lg:acol-offset-3 {
+  .lg\:acol-offset-3 {
     grid-column-start: 4;
   }
 
-  .lg:acol-offset-4 {
+  .lg\:acol-offset-4 {
     grid-column-start: 5;
   }
 
-  .lg:acol-offset-5 {
+  .lg\:acol-offset-5 {
     grid-column-start: 6;
   }
 
-  .lg:acol-offset-6 {
+  .lg\:acol-offset-6 {
     grid-column-start: 7;
   }
 
-  .lg:acol-offset-7 {
+  .lg\:acol-offset-7 {
     grid-column-start: 8;
   }
 
-  .lg:acol-offset-8 {
+  .lg\:acol-offset-8 {
     grid-column-start: 9;
   }
 
-  .lg:acol-offset-9 {
+  .lg\:acol-offset-9 {
     grid-column-start: 10;
   }
 
-  .lg:acol-offset-10 {
+  .lg\:acol-offset-10 {
     grid-column-start: 11;
   }
 
-  .lg:acol-offset-11 {
+  .lg\:acol-offset-11 {
     grid-column-start: 12;
   }
 }
-*[class*="xl:col-offset"] {
+*[class*="xl:acol-offset"] {
   grid-column-start: auto;
 }
 
 @media (min-width: 1200px) {
-  .xl:acol-offset-1 {
+  .xl\:acol-offset-1 {
     grid-column-start: 2;
   }
 
-  .xl:acol-offset-2 {
+  .xl\:acol-offset-2 {
     grid-column-start: 3;
   }
 
-  .xl:acol-offset-3 {
+  .xl\:acol-offset-3 {
     grid-column-start: 4;
   }
 
-  .xl:acol-offset-4 {
+  .xl\:acol-offset-4 {
     grid-column-start: 5;
   }
 
-  .xl:acol-offset-5 {
+  .xl\:acol-offset-5 {
     grid-column-start: 6;
   }
 
-  .xl:acol-offset-6 {
+  .xl\:acol-offset-6 {
     grid-column-start: 7;
   }
 
-  .xl:acol-offset-7 {
+  .xl\:acol-offset-7 {
     grid-column-start: 8;
   }
 
-  .xl:acol-offset-8 {
+  .xl\:acol-offset-8 {
     grid-column-start: 9;
   }
 
-  .xl:acol-offset-9 {
+  .xl\:acol-offset-9 {
     grid-column-start: 10;
   }
 
-  .xl:acol-offset-10 {
+  .xl\:acol-offset-10 {
     grid-column-start: 11;
   }
 
-  .xl:acol-offset-11 {
+  .xl\:acol-offset-11 {
     grid-column-start: 12;
   }
+}
+.acol-order-first {
+  order: -1;
+}
+
+.acol-order-last {
+  order: 10;
+}
+
+.acol-order-1 {
+  order: 1;
+}
+
+.acol-order-2 {
+  order: 2;
+}
+
+.acol-order-3 {
+  order: 3;
+}
+
+.acol-order-4 {
+  order: 4;
+}
+
+.acol-order-5 {
+  order: 5;
+}
+
+.acol-order-6 {
+  order: 6;
+}
+
+.acol-order-7 {
+  order: 7;
+}
+
+.acol-order-8 {
+  order: 8;
+}
+
+.acol-order-9 {
+  order: 9;
+}
+
+.acol-order-10 {
+  order: 10;
+}
+
+.acol-order-11 {
+  order: 11;
 }
 
 /*# sourceMappingURL=agrid.css.map */
