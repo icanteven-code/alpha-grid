@@ -99,11 +99,30 @@ $agrid-breakpoints: (
     order: -1;
   }
   .acol-order-last {
-    order: 10;
+    order: 12;
   }
   @for $i from 1 through 11 {
     .acol-order-#{$i} {
       order: $i;
+    }
+  }
+}
+
+@mixin generate-resp-col-orders {
+  @each $key, $value in $agrid-breakpoints {
+    .#{$key}\:acol-order-first {
+      order: -1;
+    }
+    .#{$key}\:acol-order-last {
+      order: 12;
+    }
+
+    @media (min-width: #{$value}) {
+      @for $i from 1 through 11 {
+        .#{$key}\:acol-order-#{$i} {
+          order: $i;
+        }
+      }
     }
   }
 }
@@ -116,6 +135,7 @@ $agrid-breakpoints: (
   @include generate-resp-col-starts;
 
   @include generate-col-orders;
+  @include generate-resp-col-orders;
 }
 
 @include init-grid;

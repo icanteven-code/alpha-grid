@@ -81,3 +81,8 @@ section {
 .offset .agrid li {
   background-color: var(--teal-5);
 }
+
+/* Example blocks */
+.example {
+  margin-top: 3rem;
+}

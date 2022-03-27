@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./styles/reset.css" />
+    <link rel="stylesheet" href="./styles/prism.css" />
     <link rel="stylesheet" href="https://unpkg.com/open-props" />
     <link rel="stylesheet" href="../dist/agrid.css" />
     <link rel="stylesheet" href="./styles/main.css" />
@@ -21,16 +22,59 @@
         of Bootstrap's own grid layout.
       </p>
     </section>
+
+    <section class="basic">
+      <h2 class="title">Basic Usage</h2>
+
+      <p class="desc">
+        aGrid uses the classic "12-Column-Grid" Style, which means that we're
+        dividing our available width to 12 and then we specifically set how much
+        columns or parts of this space we want to use. <br />
+
+        When you set <code class="language-markup">agrid</code> as a class on a
+        container, its children can use the
+        <code class="language-markup">acol-</code> classes to control their
+        width, based on how many columns we want them to span over.<code
+          class="language-markup"
+          >acol-</code
+        >
+        is available only under <code class="language-markup">agrid</code>!
+      </p>
+
+      <div class="example">
+        <p>Code Example</p>
+        <pre><code class="language-markup">
+          <script type="prism-html-markup">
+          <ul class="agrid">
+          <li class="acol-12"> Spans over 12 columns (full width) </li>
+    
+          <li class="acol-6"> Spans over 6 columns </li>
+          <li class="acol-6"> Spans over 6 columns </li>
+        </ul>
+          </script></code></pre>
+      </div>
+    </section>
+
     <section class="basic">
       <h2 class="title">Static columns</h2>
 
       <p class="desc">
-        When you set <span class="code">agrid</span> as a class on a container,
-        its children can use the <span class="code">col-</span> classes to
-        control their width, based on how many columns we want them to span
-        over. <br />
-        Available column sizes (classes) - col-1, col-2, col-3, col-4, col-5,
-        col-6, col-7, col-8, col-9, col-10, col-11, col-12.
+        Static columns stay the same size (or more like same width) through all
+        breakpoints and sizes - they're not responsive. <br />
+
+        Available column sizes (classes) -
+        <code class="language-markup">acol-1</code> |
+        <code class="language-markup">acol-2</code> |
+        <code class="language-markup">acol-3</code> |
+        <code class="language-markup">acol-4</code> |
+        <code class="language-markup">acol-5</code> |
+        <code class="language-markup">acol-6</code> |
+        <code class="language-markup">acol-7</code> |
+        <code class="language-markup">acol-8</code> |
+        <code class="language-markup">acol-9</code> |
+        <code class="language-markup">acol-10</code> |
+        <code class="language-markup">acol-11</code> |
+        <code class="language-markup">acol-12</code>
       </p>
 
       <ul class="agrid">
@@ -72,18 +116,48 @@
         <li class="acol-1"><span>1</span></li>
         <li class="acol-1"><span>1</span></li>
       </ul>
+
+      <div class="example">
+        <p>Code Example</p>
+        <pre><code class="language-markup">
+      <script type="prism-html-markup">
+      <ul class="agrid">
+      <li class="acol-12">.acol-12</li>
+
+      <li class="acol-6">.acol-6</li>
+      <li class="acol-6">.acol-6</li>
+
+      <li class="acol-5">.acol-5</span></li>
+      <li class="acol-2">2</li>
+      <li class="acol-5">.acol-5</li>
+
+      ...
+    </ul>
+      </script></code></pre>
+      </div>
     </section>
 
     <section class="responsive">
       <h2 class="title">Responsive columns</h2>
 
       <p class="desc">
-        When you use <span class="code">acol-[sm,md,lg,xl]-[1-12]</span> for
-        your columns, these column spanning sizes will have a certain breakpoint
-        from which they start to work. If the viewport is smaller than the
-        breakpoint we have selected, we use a smaller breakpoint column if
-        provided and if we don't have smaller breakpoints, our element takes a
-        full width, eg. 12 column spaced.
+        Following the "mobile-first" approach, the Responsive Columns will set
+        their value only when the viewport equals or is greater than the
+        breakpoint value. <br />
+        These breakpoints are set as a "prefix" to the normal
+        <code class="language-markup">acol-</code> class you have already seen
+        above, like this: <code class="language-markup">sm:acol-4</code> ,
+        <code class="language-markup">md:acol-6</code> ,
+        <code class="language-markup">md:acol-8</code> . If our viewport is
+        smaller than the define breakpoint-prefix the item will have a full
+        width, it will span over all 12 columns. Of cource if you have defined 2
+        breakpoints, the bigger one takes charge only during its own breakpoint
+        width.
+        <br />
+        <br />
+
+        Example - <code class="language-markup">md:acol-6</code> - responsive
+        column that takes 6 columns after md breakpoint (768px).
       </p>
 
       <ul class="agrid">
@@ -94,28 +168,117 @@
         <li class="sm:acol-2 md:acol-3 lg:acol-4 xl:acol-6">5ft</li>
         <li class="sm:acol-2 md:acol-3 lg:acol-4 xl:acol-6">6th</li>
       </ul>
+
+      <div class="example">
+        <p>Code Example</p>
+        <pre><code class="language-markup">
+        <script type="prism-html-markup">
+          <ul class="agrid">
+            <li class="sm:acol-2 md:acol-3 lg:acol-4 xl:acol-6">1st</li>
+            <li class="sm:acol-2 md:acol-3 lg:acol-4 xl:acol-6">2nd</li>
+            <li class="sm:acol-2 md:acol-3 lg:acol-4 xl:acol-6">3rd</li>
+            <li class="sm:acol-2 md:acol-3 lg:acol-4 xl:acol-6">4th</li>
+            <li class="sm:acol-2 md:acol-3 lg:acol-4 xl:acol-6">5ft</li>
+            <li class="sm:acol-2 md:acol-3 lg:acol-4 xl:acol-6">6th</li>
+          </ul>
+        </script>
+      </code></pre>
+      </div>
     </section>
 
     <section class="offset">
       <h2 class="title">Offset columns</h2>
 
       <p class="desc">
-        When you use
-        <span class="code">acol-[sm,md,lg,xl]-offset-[1-11]</span> for your
-        columns, you define an "offset" or empty space on the left side of your
-        column. This offset space is again calculated by the space of a column.
-        "acol-offset-2" means that you will have an empty space equal to the
-        width of 2 columns left of your targeted element. Offset offers again
-        both static and responsive columns.
+        When you use the offset class
+        <code class="language-markup">acol-offset-</code> for your columns, you
+        define an empty space ("offset") on the left side of your column. This
+        offset space is again calculated by the space of a column.
+        <code class="language-markup">acol-offset-2</code> means that you will
+        have an empty space equal to the width of 2 columns left of your
+        targeted element. <br />
+        Offsets support both static and responsive workflow -
+        <code class="language-markup">acol-offset-2</code> OR
+        <code class="language-markup">md:acol-offset-2</code>. <br /><br />
+
+        ⚠️ Important: While all other classes support values from
+        <code class="language-markup">1</code> to
+        <code class="language-markup">12</code>, offset supports from
+        <code class="language-markup">1</code> to
+        <code class="language-markup">11</code>! Setting an offset of 12 will
+        mean to push your element to a new line, which you can easily do with a
+        new <code class="language-markup">agrid</code>
+        container.
       </p>
 
       <ul class="agrid">
         <li class="sm:acol-2 md:acol-3 lg:acol-4 xl:acol-6">1st</li>
         <li class="sm:acol-2 md:acol-3 lg:acol-4 xl:acol-6">2nd</li>
-        <li class="sm:acol-2 md:acol-3 xl:acol-offset-3">3rd</li>
+        <li class="sm:acol-2 md:acol-3 xl:acol-offset-3">OFFSET</li>
         <li class="sm:acol-2 md:acol-3">4th</li>
         <li class="sm:acol-2 md:acol-3">5ft</li>
       </ul>
+      <div class="example">
+        <p>Code Example</p>
+        <pre><code class="language-markup">
+        <script type="prism-html-markup">
+          <ul class="agrid">
+            <li class="sm:acol-2 md:acol-3 lg:acol-4 xl:acol-6">1st</li>
+            <li class="sm:acol-2 md:acol-3 lg:acol-4 xl:acol-6">2nd</li>
+            <li class="sm:acol-2 md:acol-3 xl:acol-offset-3">OFFSET</li>
+            <li class="sm:acol-2 md:acol-3">4th</li>
+            <li class="sm:acol-2 md:acol-3">5ft</li>
+          </ul>
+    </script>
+  </code></pre>
+      </div>
     </section>
+
+    <section class="offset">
+      <h2 class="title">Order columns</h2>
+
+      <p class="desc">
+        In CSS Grid you have access to a
+        <code class="language-markup">order</code> property, with a default
+        value of 0. To move around specific elements we can use the
+        <code class="language-markup">acol-order-</code> class to change the
+        order value. <code class="language-markup">acol-order-</code> supports
+        both static and responsive syntax. Examples:<br /><br />
+        <code class="language-markup">acol-order-first</code> sends the element
+        to the start of the grid with
+        <code class="language-markup">order: -1</code> <br />
+        <code class="language-markup">acol-order-last</code> sends the element
+        to the end of the grid with
+        <code class="language-markup">order: 12</code> <br />
+        <code class="language-markup">acol-order-{1-11}</code> (max. 11) sets
+        <code class="language-markup">order: {1-11}</code>
+      </p>
+
+      <ul class="agrid">
+        <li class="sm:acol-2 md:acol-3 lg:acol-4 xl:acol-6">1st</li>
+        <li class="sm:acol-2 md:acol-3 lg:acol-4 xl:acol-6 xl:acol-order-3">
+          2nd
+        </li>
+        <li class="sm:acol-2 md:acol-3 xl:acol-order-2">3rd</li>
+        <li class="sm:acol-2 md:acol-3 xl:acol-order-1">4th</li>
+        <li class="sm:acol-2 md:acol-3 xl:acol-order-3">5ft</li>
+      </ul>
+      <div class="example">
+        <p>Code Example</p>
+        <pre><code class="language-markup">
+        <script type="prism-html-markup">
+          <ul class="agrid">
+            <li class="sm:acol-2 md:acol-3 lg:acol-4 xl:acol-6">1st</li>
+            <li class="sm:acol-2 md:acol-3 lg:acol-4 xl:acol-6 xl:acol-order-3">2nd</li>
+            <li class="sm:acol-2 md:acol-3 xl:acol-order-2">3rd</li>
+            <li class="sm:acol-2 md:acol-3 xl:acol-order-1">4th</li>
+            <li class="sm:acol-2 md:acol-3 xl:acol-order-3">5ft</li>
+          </ul>
+    </script>
+  </code></pre>
+      </div>
+    </section>
+
+    <script src="./js/prism.js"></script>
   </body>
 </html>
