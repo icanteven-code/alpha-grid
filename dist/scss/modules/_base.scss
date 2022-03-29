@@ -1,0 +1,40 @@
+$agrid-column-system: 12;
+$agrid-breakpoints: (
+  "sm": 576px,
+  "md": 768px,
+  "lg": 992px,
+  "xl": 1200px,
+);
+
+.agrid {
+  --agrid-gap: 0.25rem;
+  --agrid-gap-md: 0.75rem;
+  --agrid-gap-lg: 1rem;
+  --agrid-gap-xl: 1.5rem;
+
+  --agrid-x-padding: 0px;
+  --agrid-x-margin: 0px;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: var(--agrid-gap);
+  padding-inline: var(--agrid-x-padding);
+  margin-inline: var(--agrid-x-margin);
+}
+
+@media (min-width: 768px) {
+  .agrid {
+    --agrid-gap: var(--agrid-gap-md);
+  }
+}
+
+@media (min-width: 992px) {
+  .agrid {
+    --agrid-gap: var(--agrid-gap-lg);
+  }
+}
+
+@media (min-width: 1200px) {
+  .agrid {
+    --agrid-gap: var(--agrid-gap-xl);
+  }
+}

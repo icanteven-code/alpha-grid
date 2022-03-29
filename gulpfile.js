@@ -2,35 +2,56 @@ const gulp = require('gulp');
 const size = require('gulp-size');
 const sass = require('gulp-sass')(require('sass'));
 const postcss = require('gulp-postcss');
-const cssnano = require('cssnano');
 const autoprefixer = require('autoprefixer');
 const rename = require('gulp-rename');
+const csso = require('gulp-csso');
+const adjustMQ = require('postcss-sort-media-queries');
+const gzip = require('gulp-gzip');
+const gulpBrotli = require('gulp-brotli');
+const zlib = require('zlib');
 
-// SCSS to CSS minify
-
-function copySass(callback) {
-    gulp.src('./src/agrid/*.scss')
-        .pipe(size({ showFiles: true }))
+function cloneSASS(callback) {
+    gulp.src('./src/agrid/scss/**/*.scss')
         .pipe(gulp.dest('./dist/scss'));
 
     callback();
 }
 
-function cssminify(callback) {
-    gulp.src('./src/agrid/*.scss')
+function buildCSS(callback) {
+    gulp.src('./src/agrid/scss/*.scss')
         .pipe(sass().on("error", sass.logError))
         .pipe(size({ showFiles: true }))
         .pipe(gulp.dest('./dist'))
-        .pipe(postcss([autoprefixer(), cssnano({
-            preset: ['advanced', { zindex: false, discardComments: { removeAll: true } }]
-        })]))
+        .pipe(postcss([autoprefixer(), adjustMQ()]))
+        .pipe(csso())
         .pipe(rename({
             extname: '.min.css'
         }))
         .pipe(size({ showFiles: true }))
-        .pipe(gulp.dest('./dist'));
+        .pipe(gulp.dest('./dist'))
 
     callback();
 }
 
-exports.build = gulp.series(copySass, cssminify);
+function compressGZ(callback) {
+    gulp.src('./dist/*.min.css')
+        .pipe(gzip())
+        .pipe(gulp.dest('./dist'));
+
+    callback();
+}
+function compressBR(callback) {
+    const brotliOpts = {
+        params: {
+            [zlib.constants.BROTLI_PARAM_QUALITY]: zlib.constants.BROTLI_MAX_QUALITY,
+        },
+    }
+    gulp.src('./dist/*.min.css')
+        .pipe(gulpBrotli.compress(brotliOpts))
+        .pipe(gulp.dest('./dist'));
+    callback();
+}
+
+exports.build = gulp.series(cloneSASS, buildCSS);
+exports.compress = gulp.parallel(compressGZ, compressBR)
+
