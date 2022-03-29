@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.3.0](https://github.com/icanteven-code/alpha-grid/compare/v1.2.1...v1.3.0) (2022-03-29)
+
+
+### Features
+
+* Adjust gulp sass copy task; Upload latest dist ([f1533df](https://github.com/icanteven-code/alpha-grid/commit/f1533dfa06d2f0ad3aa0a9b80ec83e4a78424a9f))
+* Break agrid into modules; Create different base groups ([758ba1e](https://github.com/icanteven-code/alpha-grid/commit/758ba1e6351fff088fe2e4228787b0c78887c3fb))
+* Combine and sort media queries; Use CSSO for compression ([007e6d9](https://github.com/icanteven-code/alpha-grid/commit/007e6d96ad29035203c4a21f13a15a50778c70a1))
+* Compress via Gulp tasks; Add local clean.js script ([a214e80](https://github.com/icanteven-code/alpha-grid/commit/a214e8012d652aa12362028775b5ce3585dad140))
+* Move docs to /dist and handle urls; add :2here to base grid styles ([5d64b8f](https://github.com/icanteven-code/alpha-grid/commit/5d64b8fe77f938832cdf77f638f3803a43c6fc65))
+
 ### [1.2.1](https://github.com/icanteven-code/alpha-grid/compare/v1.2.0...v1.2.1) (2022-03-27)
 
 ## [1.2.0](https://github.com/icanteven-code/alpha-grid/compare/v1.1.0...v1.2.0) (2022-03-27)
