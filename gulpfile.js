@@ -9,6 +9,8 @@ const adjustMQ = require('postcss-sort-media-queries');
 const gzip = require('gulp-gzip');
 const gulpBrotli = require('gulp-brotli');
 const zlib = require('zlib');
+const useref = require('gulp-useref');
+var replace = require('gulp-replace');
 
 function cloneSASS(callback) {
     gulp.src('./src/agrid/scss/**/*.scss')
@@ -52,6 +54,26 @@ function compressBR(callback) {
     callback();
 }
 
+function buildDocs(callback) {
+    gulp.src("./src/index.html")
+        .pipe(replace(/styles\/([^"]*)/g, function (cssPath) {
+            return "demo-styles/" + cssPath.replace('styles/', '');
+        }))
+        .pipe(replace(/agrid\/([^"]*)/g, function (cssPath) {
+            return cssPath.replace('agrid/', '');
+        }))
+        .pipe(gulp.dest("./dist"));
+
+    gulp.src(["./src/styles/*.css"])
+        .pipe(gulp.dest("./dist/demo-styles"));
+
+    gulp.src(["./src/js/*.js"])
+        .pipe(gulp.dest("./dist/js"));
+
+    callback()
+}
+
 exports.build = gulp.series(cloneSASS, buildCSS);
 exports.compress = gulp.parallel(compressGZ, compressBR)
+exports.docs = gulp.series(buildDocs)
 

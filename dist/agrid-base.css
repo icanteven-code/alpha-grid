@@ -75,7 +75,7 @@
   grid-column: auto/span 12;
 }
 
-*[class*="sm:acol"] {
+:where(*[class*="sm:acol"]) {
   grid-column: auto/span 12;
 }
 
@@ -128,7 +128,7 @@
     grid-column: auto/span 12;
   }
 }
-*[class*="md:acol"] {
+:where(*[class*="md:acol"]) {
   grid-column: auto/span 12;
 }
 
@@ -181,7 +181,7 @@
     grid-column: auto/span 12;
   }
 }
-*[class*="lg:acol"] {
+:where(*[class*="lg:acol"]) {
   grid-column: auto/span 12;
 }
 
@@ -234,7 +234,7 @@
     grid-column: auto/span 12;
   }
 }
-*[class*="xl:acol"] {
+:where(*[class*="xl:acol"]) {
   grid-column: auto/span 12;
 }
 
