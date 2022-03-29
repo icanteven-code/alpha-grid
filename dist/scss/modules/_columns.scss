@@ -1,0 +1,27 @@
+@use "./base";
+
+// Generate simple col-span columns
+@mixin generate-static-cols {
+  @for $i from 1 through base.$agrid-column-system {
+    .acol-#{$i} {
+      grid-column: auto / span $i;
+    }
+  }
+}
+
+// Generate responsive cols - has a fallback for 12 col width
+@mixin generate-resp-cols {
+  @each $key, $value in base.$agrid-breakpoints {
+    *[class*="#{$key}\:acol"] {
+      grid-column: auto / span 12;
+    }
+
+    @media (min-width: #{$value}) {
+      @for $col-num from 1 through base.$agrid-column-system {
+        .#{$key}\:acol-#{$col-num} {
+          grid-column: auto / span $col-num;
+        }
+      }
+    }
+  }
+}

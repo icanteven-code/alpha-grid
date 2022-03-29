@@ -7,7 +7,7 @@ const autoprefixer = require('autoprefixer');
 const rename = require('gulp-rename');
 
 function copySass(callback) {
-    gulp.src('./src/agrid/scss/*.scss')
+    gulp.src('./src/agrid/scss/**/*.scss')
         .pipe(size({ showFiles: true }))
         .pipe(gulp.dest('./dist/scss'));
 

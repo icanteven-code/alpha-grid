@@ -5,9 +5,6 @@ $agrid-breakpoints: (
   "lg": 992px,
   "xl": 1200px,
 );
-%agrid-col-full-width {
-  grid-column: auto / span 12;
-}
 
 .agrid {
   --agrid-gap: 0.25rem;
@@ -22,4 +19,22 @@ $agrid-breakpoints: (
   gap: var(--agrid-gap);
   padding-inline: var(--agrid-x-padding);
   margin-inline: var(--agrid-x-margin);
+}
+
+@media (min-width: 768px) {
+  .agrid {
+    --agrid-gap: var(--agrid-gap-md);
+  }
+}
+
+@media (min-width: 992px) {
+  .agrid {
+    --agrid-gap: var(--agrid-gap-lg);
+  }
+}
+
+@media (min-width: 1200px) {
+  .agrid {
+    --agrid-gap: var(--agrid-gap-xl);
+  }
 }
