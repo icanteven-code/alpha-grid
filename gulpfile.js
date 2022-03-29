@@ -2,13 +2,14 @@ const gulp = require('gulp');
 const size = require('gulp-size');
 const sass = require('gulp-sass')(require('sass'));
 const postcss = require('gulp-postcss');
-const cssnano = require('cssnano');
 const autoprefixer = require('autoprefixer');
 const rename = require('gulp-rename');
+const csso = require('gulp-csso');
+const adjustMQ = require('postcss-sort-media-queries')
 
 function copySass(callback) {
     gulp.src('./src/agrid/scss/**/*.scss')
-        .pipe(size({ showFiles: true }))
+        // .pipe(size({ showFiles: true }))
         .pipe(gulp.dest('./dist/scss'));
 
     callback();
@@ -19,9 +20,8 @@ function cssminify(callback) {
         .pipe(sass().on("error", sass.logError))
         .pipe(size({ showFiles: true }))
         .pipe(gulp.dest('./dist'))
-        .pipe(postcss([autoprefixer(), cssnano({
-            preset: ['advanced', { zindex: false, discardComments: { removeAll: true } }]
-        })]))
+        .pipe(postcss([autoprefixer(), adjustMQ()]))
+        .pipe(csso())
         .pipe(rename({
             extname: '.min.css'
         }))
