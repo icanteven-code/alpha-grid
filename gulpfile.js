@@ -6,10 +6,8 @@ const cssnano = require('cssnano');
 const autoprefixer = require('autoprefixer');
 const rename = require('gulp-rename');
 
-// SCSS to CSS minify
-
 function copySass(callback) {
-    gulp.src('./src/agrid/*.scss')
+    gulp.src('./src/agrid/scss/*.scss')
         .pipe(size({ showFiles: true }))
         .pipe(gulp.dest('./dist/scss'));
 
@@ -17,7 +15,7 @@ function copySass(callback) {
 }
 
 function cssminify(callback) {
-    gulp.src('./src/agrid/*.scss')
+    gulp.src('./src/agrid/scss/*.scss')
         .pipe(sass().on("error", sass.logError))
         .pipe(size({ showFiles: true }))
         .pipe(gulp.dest('./dist'))

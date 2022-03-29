@@ -1,7 +1,3 @@
-*[class*="xl:acol"], *[class*="lg:acol"], *[class*="md:acol"], *[class*="sm:acol"] {
-  grid-column: auto/span 12;
-}
-
 .agrid {
   --agrid-gap: 0.25rem;
   --agrid-gap-md: 0.75rem;
@@ -79,48 +75,8 @@
   grid-column: auto/span 12;
 }
 
-.acol-offset-1 {
-  grid-column-start: 2;
-}
-
-.acol-offset-2 {
-  grid-column-start: 3;
-}
-
-.acol-offset-3 {
-  grid-column-start: 4;
-}
-
-.acol-offset-4 {
-  grid-column-start: 5;
-}
-
-.acol-offset-5 {
-  grid-column-start: 6;
-}
-
-.acol-offset-6 {
-  grid-column-start: 7;
-}
-
-.acol-offset-7 {
-  grid-column-start: 8;
-}
-
-.acol-offset-8 {
-  grid-column-start: 9;
-}
-
-.acol-offset-9 {
-  grid-column-start: 10;
-}
-
-.acol-offset-10 {
-  grid-column-start: 11;
-}
-
-.acol-offset-11 {
-  grid-column-start: 12;
+*[class*="sm:acol"] {
+  grid-column: auto/span 12;
 }
 
 @media (min-width: 576px) {
@@ -172,6 +128,10 @@
     grid-column: auto/span 12;
   }
 }
+*[class*="md:acol"] {
+  grid-column: auto/span 12;
+}
+
 @media (min-width: 768px) {
   .md\:acol-1 {
     grid-column: auto/span 1;
@@ -221,6 +181,10 @@
     grid-column: auto/span 12;
   }
 }
+*[class*="lg:acol"] {
+  grid-column: auto/span 12;
+}
+
 @media (min-width: 992px) {
   .lg\:acol-1 {
     grid-column: auto/span 1;
@@ -270,6 +234,10 @@
     grid-column: auto/span 12;
   }
 }
+*[class*="xl:acol"] {
+  grid-column: auto/span 12;
+}
+
 @media (min-width: 1200px) {
   .xl\:acol-1 {
     grid-column: auto/span 1;
@@ -319,6 +287,50 @@
     grid-column: auto/span 12;
   }
 }
+.acol-offset-1 {
+  grid-column-start: 2;
+}
+
+.acol-offset-2 {
+  grid-column-start: 3;
+}
+
+.acol-offset-3 {
+  grid-column-start: 4;
+}
+
+.acol-offset-4 {
+  grid-column-start: 5;
+}
+
+.acol-offset-5 {
+  grid-column-start: 6;
+}
+
+.acol-offset-6 {
+  grid-column-start: 7;
+}
+
+.acol-offset-7 {
+  grid-column-start: 8;
+}
+
+.acol-offset-8 {
+  grid-column-start: 9;
+}
+
+.acol-offset-9 {
+  grid-column-start: 10;
+}
+
+.acol-offset-10 {
+  grid-column-start: 11;
+}
+
+.acol-offset-11 {
+  grid-column-start: 12;
+}
+
 *[class*="sm:acol-offset"] {
   grid-column-start: auto;
 }

@@ -1,0 +1,8 @@
+@use "./modules/columns";
+@use "./modules/order";
+
+@include columns.generate-static-cols;
+@include columns.generate-resp-cols;
+
+@include order.generate-static-order;
+@include order.generate-resp-order;

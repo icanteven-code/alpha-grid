@@ -1,0 +1,34 @@
+@use "./base";
+
+@mixin generate-static-order {
+    .acol-order-first {
+      order: -1;
+    }
+    .acol-order-last {
+      order: 12;
+    }
+    @for $i from 1 through 11 {
+      .acol-order-#{$i} {
+        order: $i;
+      }
+    }
+  }
+  
+  @mixin generate-resp-order {
+    @each $key, $value in base.$agrid-breakpoints {
+      .#{$key}\:acol-order-first {
+        order: -1;
+      }
+      .#{$key}\:acol-order-last {
+        order: 12;
+      }
+  
+      @media (min-width: #{$value}) {
+        @for $i from 1 through 11 {
+          .#{$key}\:acol-order-#{$i} {
+            order: $i;
+          }
+        }
+      }
+    }
+  }

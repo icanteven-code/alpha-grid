@@ -8,7 +8,7 @@
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "sass --watch src/agrid/agrid.scss src/agrid/agrid.css",
+    "dev": "sass --watch src/agrid/scss/agrid.scss src/agrid/agrid.css",
     "build": "yarn build:css && yarn build:compress",
     "build:css": "gulp build",
     "build:compress": "node compress.js",
@@ -39,7 +39,7 @@
     "gulp-size": "^4.0.1",
     "gulp-sourcemaps": "^3.0.0",
     "postcss": "^8.4.6",
-    "sass": "^1.49.8",
+    "sass": "^1.49.9",
     "standard-version": "^9.3.2"
   },
   "devDependencies": {

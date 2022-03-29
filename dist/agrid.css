@@ -1,4 +1,4 @@
-*[class*="xl:acol"], *[class*="lg:acol"], *[class*="md:acol"], *[class*="sm:acol"] {
+*[class*="sm:acol"], *[class*="md:acol"], *[class*="lg:acol"], *[class*="xl:acol"] {
   grid-column: auto/span 12;
 }
 
