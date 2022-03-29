@@ -1,21 +1,36 @@
 const gulp = require('gulp');
+const size = require('gulp-size');
+const sass = require('gulp-sass')(require('sass'));
+const postcss = require('gulp-postcss');
+const cssnano = require('cssnano');
+const autoprefixer = require('autoprefixer');
+const rename = require('gulp-rename');
 
-const autoprefixer = require('autoprefixer'),
-    sourcemaps = require('gulp-sourcemaps'),
-    postcss = require('gulp-postcss'),
-    cssnano = require('cssnano');
+// SCSS to CSS minify
 
-function autoprefix() {
-    return gulp.src('./dist/agrid.css')
-        .pipe(sourcemaps.init())
-        .pipe(postcss([
-            autoprefixer({ grid: true }),
-            cssnano({
-                preset: ['advanced', { zindex: false, discardComments: { removeAll: true } }]
-            })
-        ]))
-        .pipe(sourcemaps.write('.'))
-        .pipe(gulp.dest('./dist'))
+function copySass(callback) {
+    gulp.src('./src/agrid/*.scss')
+        .pipe(size({ showFiles: true }))
+        .pipe(gulp.dest('./dist/scss'));
+
+    callback();
 }
 
-exports.default = gulp.series(autoprefix);
+function cssminify(callback) {
+    gulp.src('./src/agrid/*.scss')
+        .pipe(sass().on("error", sass.logError))
+        .pipe(size({ showFiles: true }))
+        .pipe(gulp.dest('./dist'))
+        .pipe(postcss([autoprefixer(), cssnano({
+            preset: ['advanced', { zindex: false, discardComments: { removeAll: true } }]
+        })]))
+        .pipe(rename({
+            extname: '.min.css'
+        }))
+        .pipe(size({ showFiles: true }))
+        .pipe(gulp.dest('./dist'));
+
+    callback();
+}
+
+exports.build = gulp.series(copySass, cssminify);
