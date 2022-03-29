@@ -39,7 +39,6 @@
     "gulp-sass": "^5.1.0",
     "gulp-size": "^4.0.1",
     "gulp-sourcemaps": "^3.0.0",
-    "gulp-useref": "^5.0.0",
     "postcss": "^8.4.6",
     "postcss-sort-media-queries": "^4.2.1",
     "sass": "^1.49.9",

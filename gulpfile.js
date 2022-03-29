@@ -9,7 +9,6 @@ const adjustMQ = require('postcss-sort-media-queries');
 const gzip = require('gulp-gzip');
 const gulpBrotli = require('gulp-brotli');
 const zlib = require('zlib');
-const useref = require('gulp-useref');
 var replace = require('gulp-replace');
 
 function cloneSASS(callback) {
