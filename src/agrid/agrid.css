@@ -1,30 +1,24 @@
-.agrid {
-  --agrid-gap: 0.25rem;
-  --agrid-gap-md: 0.75rem;
-  --agrid-gap-lg: 1rem;
-  --agrid-gap-xl: 1.5rem;
-  --agrid-x-padding: 0px;
-  --agrid-x-margin: 0px;
+:where(.agrid) {
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
-  gap: var(--agrid-gap);
-  padding-inline: var(--agrid-x-padding);
-  margin-inline: var(--agrid-x-margin);
+  gap: var(--agrid-gap, 0.25rem);
+  padding-inline: var(--agrid-x-padding, 0px);
+  margin-inline: var(--agrid-x-margin, 0px);
 }
 
 @media (min-width: 768px) {
-  .agrid {
-    --agrid-gap: var(--agrid-gap-md);
+  :where(.agrid) {
+    --agrid-gap: 0.75rem;
   }
 }
 @media (min-width: 992px) {
-  .agrid {
-    --agrid-gap: var(--agrid-gap-lg);
+  :where(.agrid) {
+    --agrid-gap: 1rem;
   }
 }
 @media (min-width: 1200px) {
-  .agrid {
-    --agrid-gap: var(--agrid-gap-xl);
+  :where(.agrid) {
+    --agrid-gap: 1.5rem;
   }
 }
 .acol-1 {
@@ -75,7 +69,7 @@
   grid-column: auto/span 12;
 }
 
-*[class*="sm:acol"] {
+:where(*[class*="sm:acol"]) {
   grid-column: auto/span 12;
 }
 
@@ -128,7 +122,7 @@
     grid-column: auto/span 12;
   }
 }
-*[class*="md:acol"] {
+:where(*[class*="md:acol"]) {
   grid-column: auto/span 12;
 }
 
@@ -181,7 +175,7 @@
     grid-column: auto/span 12;
   }
 }
-*[class*="lg:acol"] {
+:where(*[class*="lg:acol"]) {
   grid-column: auto/span 12;
 }
 
@@ -234,7 +228,7 @@
     grid-column: auto/span 12;
   }
 }
-*[class*="xl:acol"] {
+:where(*[class*="xl:acol"]) {
   grid-column: auto/span 12;
 }
 
@@ -331,7 +325,7 @@
   grid-column-start: 12;
 }
 
-*[class*="sm:acol-offset"] {
+:where(*[class*="sm:acol-offset"]) {
   grid-column-start: auto;
 }
 
@@ -380,7 +374,7 @@
     grid-column-start: 12;
   }
 }
-*[class*="md:acol-offset"] {
+:where(*[class*="md:acol-offset"]) {
   grid-column-start: auto;
 }
 
@@ -429,7 +423,7 @@
     grid-column-start: 12;
   }
 }
-*[class*="lg:acol-offset"] {
+:where(*[class*="lg:acol-offset"]) {
   grid-column-start: auto;
 }
 
@@ -478,7 +472,7 @@
     grid-column-start: 12;
   }
 }
-*[class*="xl:acol-offset"] {
+:where(*[class*="xl:acol-offset"]) {
   grid-column-start: auto;
 }
 
