@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.4.0](https://github.com/icanteven-code/alpha-grid/compare/v1.3.1...v1.4.0) (2022-04-21)
+
+
+### Features
+
+* Move docs to dedicated folder; Clean dist; Adjust variables; Update docs ([6182144](https://github.com/icanteven-code/alpha-grid/commit/61821449ddfc4fd43db9342be9b7addd0f207f75))
+
 ### [1.3.1](https://github.com/icanteven-code/alpha-grid/compare/v1.3.0...v1.3.1) (2022-03-29)
 
 ## [1.3.0](https://github.com/icanteven-code/alpha-grid/compare/v1.2.1...v1.3.0) (2022-03-29)
