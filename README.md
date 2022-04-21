@@ -50,11 +50,11 @@ SCSS
 ### CDN
 Load the `agrid.css` file in your project
 ```
-<link rel="stylesheet" href="https://raw.githack.com/icanteven-code/alpha-grid/master/dist/agrid.css" />
+<link rel="stylesheet" href="https://unpkg.com/alpha-grid@1.4.0/dist/agrid.min.css" />
 
 OR
 
-@import url('https://raw.githack.com/icanteven-code/alpha-grid/master/dist/agrid.css');
+@import url('https://unpkg.com/alpha-grid@1.4.0/dist/agrid.min.css');
 ```
 
 ## Usage
