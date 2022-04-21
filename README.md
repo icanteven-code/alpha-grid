@@ -40,7 +40,7 @@ CSS Minified
 SCSS
 @use "alpha-grid/dist/scss/agrid.scss";
 ```
-- OR add only the bundle you need (more about the different budles bellow) - again supports both CSS and SCSS files
+- OR add only the bundle you need (more about the different bundles bellow) - again supports both CSS and SCSS files
 
 ```
 SCSS
@@ -97,9 +97,9 @@ As touched in the previous point, we have columns that are working for specific 
 ## Bundles
 You can decide on which features you need and import only them:
 - `agrid.css/scss` - all utility classes
-- `agrid-base.css/scss` - only the `colums` + responsive prefixes
-- `agrid-offset.css/scss` - `colums` + `offset` + responsive prefixes
-- `agrid-order.css/scss` - `colums` + `order` + responsive prefixes
+- `agrid-base.css/scss` - only the `columns` + responsive prefixes
+- `agrid-offset.css/scss` - `columns` + `offset` + responsive prefixes
+- `agrid-order.css/scss` - `columns` + `order` + responsive prefixes
 
 ## Customization
 alphaGrid was built with the idea of customizing as much as possible, so to achieve that we use css custom properties, which you can overwrite if needed. When changing these it should be better to scope them to the `agrid` class.
@@ -113,7 +113,7 @@ alphaGrid was built with the idea of customizing as much as possible, so to achi
 To overwrite these default variables you need to define your own values after the `agrid.css` is added. This is the whole control you have with simple css.
 
 ### Customizing breakpoints - SASS
-You have also the possibillity to overwrite and change the responsive prefixes - change the breakpoints, remove, add or completely rename the casses. This can be done **only via SCSS** -  load the SASS version `/dist/agrid.scss` and then you will have access to extend the SASS variables and have even more control. This requires you to have your own SASS compiling step in your app.
+You have also the possibility to overwrite and change the responsive prefixes - change the breakpoints, remove, add or completely rename the classes. This can be done **only via SCSS** -  load the SASS version `/dist/agrid.scss` and then you will have access to extend the SASS variables and have even more control. This requires you to have your own SASS compiling step in your app.
 
 SASS Example
 ```
