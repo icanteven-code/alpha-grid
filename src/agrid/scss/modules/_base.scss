@@ -4,10 +4,13 @@
 @use "sass:map";
 $agrid-column-system: 12;
 $agrid-breakpoints: (
-  "sm": 576px,
+  "xs": 576px,
+  "sm": 640px,
   "md": 768px,
-  "lg": 992px,
-  "xl": 1200px,
+  "lg": 1024px,
+  "xl": 1280px,
+  "xxl": 1440px,
+  "xxxl": 1536px,
 ) !default;
 
 $agrid-gaps: () !default;
@@ -30,47 +33,46 @@ $agrid-gaps: () !default;
 }
 
 // Setup grids with dynamic columns
-@mixin generate-static-light-grid {
-  @for $i from 1 through ($agrid-column-system - 1) {
-    .agrid-#{$i} {
-      grid-template-columns: repeat($i, minmax(0, 1fr));
-    }
+@for $i from 1 through ($agrid-column-system - 1) {
+  .agrid-#{$i} {
+    grid-template-columns: repeat($i, minmax(0, 1fr));
   }
 }
-@include generate-static-light-grid();
-
 // Setup responsive dynamic columns grids
-@mixin generate-resp-light-grid {
-  @each $key, $value in $agrid-breakpoints {
-    @media (min-width: #{$value}) {
-      @for $col-num from 1 through ($agrid-column-system - 1) {
-        .#{$key}\:agrid-#{$col-num} {
-          grid-template-columns: repeat($col-num, minmax(0, 1fr));
-        }
+@each $key, $value in $agrid-breakpoints {
+  @media (min-width: #{$value}) {
+    @for $col-num from 1 through ($agrid-column-system - 1) {
+      .#{$key}\:agrid-#{$col-num} {
+        grid-template-columns: repeat($col-num, minmax(0, 1fr));
       }
     }
   }
 }
-@include generate-resp-light-grid();
 
 // ------
 // Gap setup and responsive values
 // ------
 
-@media (min-width: 768px) {
+@media (min-width: map.get($agrid-breakpoints, "sm")) {
   :where([class*="agrid"]) {
     --agrid-gap: #{map.get($agrid-gaps, 3)};
   }
 }
 
-@media (min-width: 992px) {
+@media (min-width: map.get($agrid-breakpoints, "md")) {
   :where([class*="agrid"]) {
     --agrid-gap: #{map.get($agrid-gaps, 4)};
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: map.get($agrid-breakpoints, "lg")) {
   :where([class*="agrid"]) {
     --agrid-gap: #{map.get($agrid-gaps, 5)};
+  }
+}
+
+@media (min-width: map.get($agrid-breakpoints, "xxxl")) {
+  :where([class*="agrid"]) {
+    --agrid-gap: #{map.get($agrid-gaps, 6)};
   }
 }
