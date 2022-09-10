@@ -6,28 +6,65 @@ $agrid-breakpoints: (
   "xl": 1200px,
 ) !default;
 
-:where(.agrid) {
+
+
+// ------
+// Grid setup
+// ------
+
+// Setup classic 12 cols grid
+:where([class*="agrid"]) {
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
-  gap: var(--agrid-gap, 0.25rem);
+  gap: var(--agrid-gap, 0.5rem);
   padding-inline: var(--agrid-x-padding, 0px);
   margin-inline: var(--agrid-x-margin, 0px);
+  transition: gap 300ms ease-in-out;
 }
 
+// Setup grids with dynamic columns
+@mixin generate-static-light-grid {
+  @for $i from 1 through ($agrid-column-system - 1) {
+    .agrid-#{$i} {
+      grid-template-columns: repeat($i, minmax(0, 1fr));
+    }
+  }
+}
+@include generate-static-light-grid();
+
+// Setup responsive dynamic columns grids
+@mixin generate-resp-light-grid {
+  @each $key, $value in $agrid-breakpoints {
+    @media (min-width: #{$value}) {
+      @for $col-num from 1 through ($agrid-column-system - 1) {
+        .#{$key}\:agrid-#{$col-num} {
+          grid-template-columns: repeat($col-num, minmax(0, 1fr));
+        }
+      }
+    }
+  }
+}
+@include generate-resp-light-grid();
+
+
+// ------
+// Gap setup and responsive values
+// ------
+
 @media (min-width: 768px) {
-  :where(.agrid) {
+  :where([class*="agrid"]) {
     --agrid-gap: 0.75rem;
   }
 }
 
 @media (min-width: 992px) {
-  :where(.agrid) {
+  :where([class*="agrid"]) {
     --agrid-gap: 1rem;
   }
 }
 
 @media (min-width: 1200px) {
-  :where(.agrid) {
-    --agrid-gap: 1.5rem;
+  :where([class*="agrid"]) {
+    --agrid-gap: 1.25rem;
   }
 }
