@@ -2,6 +2,7 @@
 @use "./modules/columns";
 @use "./modules/offset";
 @use "./modules/order";
+@use "./modules/gaps";
 
 @include columns.generate-static-cols;
 @include columns.generate-resp-cols;
@@ -11,3 +12,6 @@
 
 @include order.generate-static-order;
 @include order.generate-resp-order;
+
+@include gaps.generate-static;
+@include gaps.generate-responsive;

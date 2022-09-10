@@ -1,0 +1,21 @@
+@use "./base";
+
+@mixin generate-static {
+  @each $key, $value in base.$agrid-gaps {
+    :where(.agrid-gap-#{$key}) {
+      --agrid-gap: #{$value};
+    }
+  }
+}
+
+@mixin generate-responsive {
+  @each $key, $value in base.$agrid-breakpoints {
+    @media (min-width: #{$value}) {
+      @each $gapKey, $gapValue in base.$agrid-gaps {
+        :where(.#{$key}\:agrid-gap-#{$gapKey}) {
+          --agrid-gap: #{$gapValue};
+        }
+      }
+    }
+  }
+}

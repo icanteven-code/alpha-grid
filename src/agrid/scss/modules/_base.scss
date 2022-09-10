@@ -1,3 +1,7 @@
+// ------
+// Variables and configs
+// ------
+@use "sass:map";
 $agrid-column-system: 12;
 $agrid-breakpoints: (
   "sm": 576px,
@@ -6,7 +10,10 @@ $agrid-breakpoints: (
   "xl": 1200px,
 ) !default;
 
-
+$agrid-gaps: () !default;
+@for $i from 1 through $agrid-column-system {
+  $agrid-gaps: map.set($agrid-gaps, $i, $i * 0.25rem);
+}
 
 // ------
 // Grid setup
@@ -16,7 +23,7 @@ $agrid-breakpoints: (
 :where([class*="agrid"]) {
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
-  gap: var(--agrid-gap, 0.5rem);
+  gap: var(--agrid-gap, #{map.get($agrid-gaps, 2)});
   padding-inline: var(--agrid-x-padding, 0px);
   margin-inline: var(--agrid-x-margin, 0px);
   transition: gap 300ms ease-in-out;
@@ -46,25 +53,24 @@ $agrid-breakpoints: (
 }
 @include generate-resp-light-grid();
 
-
 // ------
 // Gap setup and responsive values
 // ------
 
 @media (min-width: 768px) {
   :where([class*="agrid"]) {
-    --agrid-gap: 0.75rem;
+    --agrid-gap: #{map.get($agrid-gaps, 3)};
   }
 }
 
 @media (min-width: 992px) {
   :where([class*="agrid"]) {
-    --agrid-gap: 1rem;
+    --agrid-gap: #{map.get($agrid-gaps, 4)};
   }
 }
 
 @media (min-width: 1200px) {
   :where([class*="agrid"]) {
-    --agrid-gap: 1.25rem;
+    --agrid-gap: #{map.get($agrid-gaps, 5)};
   }
 }
