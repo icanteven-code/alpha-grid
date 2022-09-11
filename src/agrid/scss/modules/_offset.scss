@@ -1,7 +1,7 @@
 @use "./base";
 
 // Generate simple col-offset values
-@mixin generate-static-offset {
+@mixin generate-static {
   @for $i from 1 through (base.$agrid-column-system - 1) {
     .offset-#{$i} {
       --agrid-column-start: #{$i + 1};
@@ -10,7 +10,7 @@
 }
 
 // Generate responsive offsets - has a fallback for auto col start
-@mixin generate-resp-offset {
+@mixin generate-responsive {
   @each $key, $value in base.$agrid-breakpoints {
     [class*="#{$key}\:offset"] {
       --agrid-column-start: auto;

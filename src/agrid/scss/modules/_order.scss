@@ -2,7 +2,7 @@
 
 $agrid-order-count: 12 !default;
 
-@mixin generate-static-order {
+@mixin generate-static {
   .order-first {
     --agrid-order: -1;
   }
@@ -16,7 +16,7 @@ $agrid-order-count: 12 !default;
   }
 }
 
-@mixin generate-resp-order {
+@mixin generate-responsive {
   @each $key, $value in base.$agrid-breakpoints {
     .#{$key}\:order-first {
       --agrid-order: -1;
