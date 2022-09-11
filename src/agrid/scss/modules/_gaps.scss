@@ -2,7 +2,7 @@
 
 @mixin generate-static {
   @each $key, $value in base.$agrid-gaps {
-    :where(.agrid-gap-#{$key}) {
+    .gap-#{$key} {
       --agrid-gap: #{$value};
     }
   }
@@ -12,7 +12,7 @@
   @each $key, $value in base.$agrid-breakpoints {
     @media (min-width: #{$value}) {
       @each $gapKey, $gapValue in base.$agrid-gaps {
-        :where(.#{$key}\:agrid-gap-#{$gapKey}) {
+        .#{$key}\:gap-#{$gapKey} {
           --agrid-gap: #{$gapValue};
         }
       }

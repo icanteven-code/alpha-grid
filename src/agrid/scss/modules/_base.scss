@@ -23,13 +23,20 @@ $agrid-gaps: () !default;
 // ------
 
 // Setup classic 12 cols grid
-:where([class*="agrid"]) {
+[class*="agrid"] {
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
-  gap: var(--agrid-gap, #{map.get($agrid-gaps, 2)});
   padding-inline: var(--agrid-x-padding, 0px);
   margin-inline: var(--agrid-x-margin, 0px);
   transition: gap 300ms ease-in-out;
+  // Configurable via modules
+  gap: var(--agrid-gap, #{map.get($agrid-gaps, 2)});
+}
+
+// Configurable via modules
+[class*="agrid"] > * {
+  grid-column-start: var(--agrid-column-start, auto);
+  order: var(--agrid-order, 0);
 }
 
 // Setup grids with dynamic columns
@@ -54,25 +61,25 @@ $agrid-gaps: () !default;
 // ------
 
 @media (min-width: map.get($agrid-breakpoints, "sm")) {
-  :where([class*="agrid"]) {
+  [class*="agrid"] {
     --agrid-gap: #{map.get($agrid-gaps, 3)};
   }
 }
 
 @media (min-width: map.get($agrid-breakpoints, "md")) {
-  :where([class*="agrid"]) {
+  [class*="agrid"] {
     --agrid-gap: #{map.get($agrid-gaps, 4)};
   }
 }
 
 @media (min-width: map.get($agrid-breakpoints, "lg")) {
-  :where([class*="agrid"]) {
+  [class*="agrid"] {
     --agrid-gap: #{map.get($agrid-gaps, 5)};
   }
 }
 
 @media (min-width: map.get($agrid-breakpoints, "xxxl")) {
-  :where([class*="agrid"]) {
+  [class*="agrid"] {
     --agrid-gap: #{map.get($agrid-gaps, 6)};
   }
 }
