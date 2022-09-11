@@ -1,0 +1,17 @@
+:root {
+  --vp-c-brand: #82c91e;
+  --vp-c-brand-light: #82c91e;
+}
+
+.VPHome .name ~ .text {
+  background-image: linear-gradient(
+    to right,
+    #fd7e17,
+    #e79500,
+    #cba900,
+    #aaba00,
+    #82c91e
+  );
+  -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
