@@ -1,13 +1,15 @@
 @use "./base";
 
+$agrid-order-count: 12 !default;
+
 @mixin generate-static-order {
   .order-first {
     --agrid-order: -1;
   }
   .order-last {
-    --agrid-order: 12;
+    --agrid-order: #{$agrid-order-count};
   }
-  @for $i from 1 through 11 {
+  @for $i from 1 through ($agrid-order-count - 1) {
     .order-#{$i} {
       --agrid-order: #{$i};
     }
@@ -20,11 +22,11 @@
       --agrid-order: -1;
     }
     .#{$key}\:order-last {
-      --agrid-order: 12;
+      --agrid-order: #{$agrid-order-count};
     }
 
     @media (min-width: #{$value}) {
-      @for $i from 1 through 11 {
+      @for $i from 1 through ($agrid-order-count - 1) {
         .#{$key}\:order-#{$i} {
           --agrid-order: #{$i};
         }
