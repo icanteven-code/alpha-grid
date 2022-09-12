@@ -1,11 +1,11 @@
 export default {
     title: 'alphaGrid',
-    description: 'Just playing around.',
+    description: 'Simple utility-first CSS library for implemeting Grid layouts',
 
     themeConfig: {
         nav: [
             { text: 'Quickstart', link: '/guide/quick-start' },
-            { text: 'Docs', link: '/syntax/grid', },
+            { text: 'Docs', link: '/utils/grid', },
             { text: 'Changelog', link: 'https://github.com/...' }
         ],
         sidebar: [
@@ -20,12 +20,12 @@ export default {
                         ]
                     },
                     {
-                        text: 'Syntax',
+                        text: 'Utilities',
                         items: [
-                            { text: 'Grid', link: '/syntax/grid' },
-                            { text: 'Gap', link: '/syntax/gap' },
-                            { text: 'Offset', link: '/syntax/offset' },
-                            { text: 'Order', link: '/syntax/order' }
+                            { text: 'Grid', link: '/utils/grid' },
+                            { text: 'Order', link: '/utils/order' },
+                            { text: 'Offset', link: '/utils/offset' },
+                            { text: 'Gap', link: '/utils/gap' },
                         ]
                     }
                 ]
