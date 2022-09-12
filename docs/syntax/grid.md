@@ -44,7 +44,33 @@ Example - `md:agrid-6` - responsive grid that creates 6 columns when the viewpor
 
 *Responsive grid example*
 <div class="classic--responsive">
-  <ul class="sm:agrid-2 md:agrid-3 lg:agrid-4">
+  <ul class="agrid-1 sm:agrid-2 md:agrid-3 lg:agrid-4">
+    <li>1st</li>
+    <li>2nd</li>
+    <li>3rd</li>
+    <li>4th</li>
+    <li>5ft</li>
+    <li>6th</li>
+  </ul>
+</div>
+
+```html{1}
+<ul class="agrid-1 sm:agrid-2 md:agrid-3 lg:agrid-4">
+  <li>1st</li>
+  <li>2nd</li>
+  <li>3rd</li>
+  <li>4th</li>
+  <li>5ft</li>
+  <li>6th</li>
+</ul>
+```
+
+### Classic with `acol-[n]`
+You can also use the `acol-[n]` classes here too, but they're not required. They will help you span a specific item on more columns. Works for both static and responsive cases.
+
+*Classic grid + acol-2 example*
+<div class="classic--responsive">
+  <ul class="agrid-1 sm:agrid-2 md:agrid-3 lg:agrid-4">
     <li class="acol-2">1st</li>
     <li>2nd</li>
     <li>3rd</li>
@@ -54,8 +80,8 @@ Example - `md:agrid-6` - responsive grid that creates 6 columns when the viewpor
   </ul>
 </div>
 
-```html
-<ul class="sm:agrid-2 md:agrid-3 lg:agrid-4">
+```html{2}
+<ul class="agrid-1 sm:agrid-2 md:agrid-3 lg:agrid-4">
   <li class="acol-2">1st</li>
   <li>2nd</li>
   <li>3rd</li>
@@ -64,6 +90,8 @@ Example - `md:agrid-6` - responsive grid that creates 6 columns when the viewpor
   <li>6th</li>
 </ul>
 ```
+
+
 
 
 ## 12 Column style

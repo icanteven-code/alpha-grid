@@ -1,8 +1,8 @@
 @use "./modules/columns";
 @use "./modules/offset";
 
-@include columns.generate-static-cols;
-@include columns.generate-resp-cols;
+@include columns.generate-static;
+@include columns.generate-responsive;
 
-@include offset.generate-static-offset;
-@include offset.generate-resp-offset;
+@include offset.generate-static;
+@include offset.generate-responsive;
