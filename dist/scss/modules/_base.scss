@@ -64,7 +64,7 @@ $agrid-gaps: null !default;
 // ------
 @if map.has-key($agrid-breakpoints, "sm") {
   @media (min-width: map.get($agrid-breakpoints, "sm")) {
-    [class*="agrid"] {
+    :where([class*="agrid"]) {
       --agrid-gap: #{map.get($agrid-gaps, 3)};
     }
   }
@@ -72,21 +72,21 @@ $agrid-gaps: null !default;
 
 @if map.has-key($agrid-breakpoints, "md") {
   @media (min-width: map.get($agrid-breakpoints, "md")) {
-    [class*="agrid"] {
+    :where([class*="agrid"]) {
       --agrid-gap: #{map.get($agrid-gaps, 4)};
     }
   }
 }
 @if map.has-key($agrid-breakpoints, "lg") {
   @media (min-width: map.get($agrid-breakpoints, "lg")) {
-    [class*="agrid"] {
+    :where([class*="agrid"]) {
       --agrid-gap: #{map.get($agrid-gaps, 5)};
     }
   }
 }
 @if map.has-key($agrid-breakpoints, "xxxl") {
   @media (min-width: map.get($agrid-breakpoints, "xxxl")) {
-    [class*="agrid"] {
+    :where([class*="agrid"]) {
       --agrid-gap: #{map.get($agrid-gaps, 6)};
     }
   }

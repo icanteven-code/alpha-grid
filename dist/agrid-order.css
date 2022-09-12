@@ -372,22 +372,22 @@
   }
 }
 @media (min-width: 640px) {
-  [class*=agrid] {
+  :where([class*="agrid"]) {
     --agrid-gap: 0.75rem;
   }
 }
 @media (min-width: 768px) {
-  [class*=agrid] {
+  :where([class*="agrid"]) {
     --agrid-gap: 1rem;
   }
 }
 @media (min-width: 1024px) {
-  [class*=agrid] {
+  :where([class*="agrid"]) {
     --agrid-gap: 1.25rem;
   }
 }
 @media (min-width: 1536px) {
-  [class*=agrid] {
+  :where([class*="agrid"]) {
     --agrid-gap: 1.5rem;
   }
 }

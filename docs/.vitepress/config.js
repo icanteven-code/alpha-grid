@@ -6,7 +6,7 @@ export default {
         nav: [
             { text: 'Quickstart', link: '/guide/quick-start' },
             { text: 'Docs', link: '/utils/grid', },
-            { text: 'Changelog', link: 'https://github.com/...' }
+            { text: 'Changelog', link: 'https://github.com/icanteven-code/alpha-grid' }
         ],
         sidebar: [
             {
