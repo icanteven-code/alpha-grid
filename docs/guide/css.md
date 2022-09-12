@@ -28,7 +28,7 @@ You can choose from these prebuild bundles. Each bundle contains all responsive 
 - `agrid-gap.css` - `gap`
 
 ::: warning
-⚠️ The gaps are very specific utilities and probably you will almost never will need to use them. In any case, if you want to use them you need to load them **additionally** to a bundle of your choice. The `agrid.css` (all styles)contains the gaps!
+⚠️ The gaps are very specific utilities and probably you will almost never will need to use them. In any case, if you want to use them you need to load them **additionally** to a bundle of your choice. The `agrid.css` (all styles) contains the gaps!
 :::
 
 

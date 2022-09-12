@@ -9,13 +9,13 @@
   --vp-button-brand-text: var(--vp-c-white-soft);
 }
 
-ul.agrid {
+ul[class*="agrid"] {
   padding: 0px;
   margin: 0px;
   list-style: none;
 }
 
-.agrid > li {
+[class*="agrid"] > li {
   padding: 0.25rem;
   height: 4rem;
   border-radius: 8px;

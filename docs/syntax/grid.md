@@ -1,13 +1,70 @@
 # Grid
 
-aGrid supports 2 syntaxes - a "quick" style were you directly define the number of columns (something like [Tailwind's grid](https://tailwindcss.com/docs/grid-template-columns)) and "12 Column" style, where you define a container splited by 12 columns and set each child element how much columns it spans inside (something like [Bootstrap's grid system](https://getbootstrap.com/docs/4.0/layout/grid/)).
+aGrid supports 2 syntaxes - a **classic** style, were you directly define the number of columns (like [Tailwind's grid](https://tailwindcss.com/docs/grid-template-columns)) and **12 column** style, where you define a container splited by 12 columns and set each child element how much columns it spans inside (like [Bootstrap's grid system](https://getbootstrap.com/docs/4.0/layout/grid/)).
 
-[[toc]]
 
-## Quick style
+## Classic
 
-uses the classic "12-Column-Grid" Style, which means that we're dividing our available width to 12 and then we specifically set how much columns or parts of this space we want to use.
-When you set agrid as a class on a container, its children can use the acol- classes to control their width, based on how many columns we want them to span over.acol- is available only under agrid!
+This way you don't need to specify how many columns a child element should span. You create a grid with 2, 3 or however many columns and let the items to nest automatically, like a simple grid. This is done via using only th `agrid-[n]` class with the number of columns you want to create - `agrid-1`, `agrid-2`, `agrid-3`, ..., `agrid-11`. The normal `agrid` class creates 12 columns, so you can use it directly for those cases.
+
+::: tip
+The number of available `agrid-[n]` classes is alway 1 less than the number of columns set in the library (default 12). The number of `agrid-[n]` classes can be customized fully via SASS. More on this you can find here: [Customizing aGrid](../config/customizing.md).
+:::
+
+### Static grid
+
+Static columns stay the same size (or more like same width) through all breakpoints and sizes - they're not responsive.
+
+*Static grid example*
+<div class="classic--static">
+  <ul class="agrid-6">
+    <li>1st</li>
+    <li>2nd</li>
+    <li>3rd</li>
+    <li>4th</li>
+    <li>5ft</li>
+  </ul>
+</div>
+
+```html
+<ul class="agrid-6">
+  <li>1st</li>
+  <li>2nd</li>
+  <li>3rd</li>
+  <li>4th</li>
+  <li>5ft</li>
+</ul>
+```
+
+### Responsive grid
+Following the "mobile-first" approach, the Responsive Columns will set their value only when the viewport equals or is greater than the breakpoint value. <br/>
+These breakpoints are set as a "prefix" to the normal `agrid-[n]` class you have already seen above, like this: `sm:agrid-4` , `md:agrid-6` , `lg:agrid-8` . If our viewport is smaller than the define breakpoint-prefix the item will have a full width, it will span over all 12 columns. Of cource if you have defined 2 breakpoints, the larger/bigger one takes charge only during its own breakpoint width.
+
+Example - `md:agrid-6` - responsive grid that creates 6 columns when the viewport is bigger or equal to the `md` breakpoint (>= 768px).
+
+*Responsive grid example*
+<div class="classic--responsive">
+  <ul class="sm:agrid-2 md:agrid-3 lg:agrid-4">
+    <li class="acol-2">1st</li>
+    <li>2nd</li>
+    <li>3rd</li>
+    <li>4th</li>
+    <li>5ft</li>
+    <li>6th</li>
+  </ul>
+</div>
+
+```html
+<ul class="sm:agrid-2 md:agrid-3 lg:agrid-4">
+  <li class="acol-2">1st</li>
+  <li>2nd</li>
+  <li>3rd</li>
+  <li>4th</li>
+  <li>5ft</li>
+  <li>6th</li>
+</ul>
+```
+
 
 ## 12 Column style
 
@@ -22,6 +79,7 @@ When you set `agrid` as a class on a container, its children can use the `acol-`
   <li class="acol-6">Spans over 6 columns</li>
 </ul>
 ```
+
 ::: tip
 The number of columns and respectively the available `acol-[n]` classes can be customized fully via SASS. More on this you can find here: [Customizing aGrid](../config/customizing.md).
 :::
@@ -45,7 +103,8 @@ Static columns stay the same size (or more like same width) through all breakpoi
 </ul>
 ```
 
-*Static columns example*
+_Static columns example_
+
 <div class="basic">
 <ul class="agrid">
         <li class="acol-12"><span>.acol-12</span></li>
@@ -128,15 +187,14 @@ Static columns stay the same size (or more like same width) through all breakpoi
 
 :::
 
-
 ### Responsive columns
 
 Following the "mobile-first" approach, the Responsive Columns will set their value only when the viewport equals or is greater than the breakpoint value. <br/>
 These breakpoints are set as a "prefix" to the normal `acol-` class you have already seen above, like this: `sm:acol-4` , `md:acol-6` , `md:acol-8` . If our viewport is smaller than the define breakpoint-prefix the item will have a full width, it will span over all 12 columns. Of cource if you have defined 2 breakpoints, the larger/bigger one takes charge only during its own breakpoint width.
 
-Example - `md:acol-6` - responsive column that takes 6 columns after `md` breakpoint (768px). 
+Example - `md:acol-6` - responsive column that spans 6 columns-width when the viewport is bigger or equal to the `md` breakpoint (>= 768px).
 
-*Responsive columns example* - Resize your viewport
+_Responsive columns example_ - Resize your viewport
 
 <div class="responsive">
     <ul class="agrid">
@@ -151,9 +209,54 @@ Example - `md:acol-6` - responsive column that takes 6 columns after `md` breakp
 
 On mobile each element will be full width (12 cols), at 640px (`sm`) will be 2 columns wide, at 768px (`md`) will be 3 columns wide and at 1024px+ (`lg`) will be 4 columns wide.
 
+```html
+<ul class="agrid">
+  <li class="sm:acol-2 md:acol-3 lg:acol-4 xl:acol-6">1st</li>
+  <li class="sm:acol-2 md:acol-3 lg:acol-4 xl:acol-6">2nd</li>
+  <li class="sm:acol-2 md:acol-3 lg:acol-4 xl:acol-6">3rd</li>
+  <li class="sm:acol-2 md:acol-3 lg:acol-4 xl:acol-6">4th</li>
+  <li class="sm:acol-2 md:acol-3 lg:acol-4 xl:acol-6">5ft</li>
+  <li class="sm:acol-2 md:acol-3 lg:acol-4 xl:acol-6">6th</li>
+</ul>
+```
 
+## Breakpoints and gaps
 
 <style>
+  /* Classic */
+  .classic--static{
+    --teal-5: #20c997;
+  }
+  .classic--static [class*="agrid"] > li {
+  background-color: var(--teal-5);
+}
+
+/* Classic responsive */
+.classic--responsive{
+   --green-2: #b2f2bb;
+--green-3: #8ce99a;
+--green-4: #69db7c;
+--green-5: #51cf66;
+  }
+  .classic--responsive [class*="agrid"] > li {
+  background-color: var(--green-2);
+}
+@media screen and (min-width: 640px) {
+  .classic--responsive [class*="agrid"] > li {
+    background-color: var(--green-3);
+  }
+}
+@media screen and (min-width: 768px) {
+  .classic--responsive [class*="agrid"] > li {
+    background-color: var(--green-4);
+  }
+}
+@media screen and (min-width: 1024px) {
+  .classic--responsive [class*="agrid"] > li {
+    background-color: var(--green-5);
+  }
+}
+/* 12 columns */
 .basic{
   --orange-3: #ffc078;
   --orange-4: #ffa94d;
@@ -195,7 +298,7 @@ On mobile each element will be full width (12 cols), at 640px (`sm`) will be 2 c
 .responsive .agrid li {
   background-color: var(--lime-3);
 }
-@media screen and (min-width: 576px) {
+@media screen and (min-width: 640px) {
   .responsive .agrid li {
     background-color: var(--lime-4);
   }
@@ -205,12 +308,12 @@ On mobile each element will be full width (12 cols), at 640px (`sm`) will be 2 c
     background-color: var(--lime-5);
   }
 }
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 1024px) {
   .responsive .agrid li {
     background-color: var(--lime-6);
   }
 }
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1280px) {
   .responsive .agrid li {
     background-color: var(--lime-7);
   }

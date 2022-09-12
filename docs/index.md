@@ -4,7 +4,7 @@ aside: true
 hero:
   name: 🧱 αGrid
   text: Simple. Small. Configurable.
-  tagline: alphaGrid is a tool for implementing Column Grid layouts - supports 12 columns or simpler tailwind style syntax.
+  tagline: Simple utility-first CSS library for implemeting Grid layouts
   actions:
     - theme: brand
       text: Get Started
