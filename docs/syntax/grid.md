@@ -23,6 +23,7 @@ Static columns stay the same size (or more like same width) through all breakpoi
     <li>3rd</li>
     <li>4th</li>
     <li>5ft</li>
+    <li>6th</li>
   </ul>
 </div>
 
@@ -33,6 +34,7 @@ Static columns stay the same size (or more like same width) through all breakpoi
   <li>3rd</li>
   <li>4th</li>
   <li>5ft</li>
+  <li>6th</li>
 </ul>
 ```
 
