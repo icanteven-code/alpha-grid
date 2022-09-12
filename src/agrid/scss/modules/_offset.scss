@@ -12,7 +12,7 @@
 // Generate responsive offsets - has a fallback for auto col start
 @mixin generate-responsive {
   @each $key, $value in base.$agrid-breakpoints {
-    [class*="#{$key}\:offset"] {
+    :where([class*="#{$key}\:offset"]) {
       --agrid-column-start: auto;
     }
 

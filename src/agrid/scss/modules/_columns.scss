@@ -13,8 +13,7 @@
 // Generate responsive cols - has a fallback for 12 col width
 @mixin generate-responsive {
   @each $key, $value in base.$agrid-breakpoints {
-    [class*="#{$key}\:acol"] {
-      // grid-column: auto / span 12;
+    :where(.agrid > *){
       grid-column-end: span 12;
     }
 

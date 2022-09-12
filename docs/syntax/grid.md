@@ -73,7 +73,7 @@ You can also use the `acol-[n]` classes here too, but they're not required. They
 *Classic grid + acol-2 example*
 <div class="classic--responsive">
   <ul class="agrid-1 sm:agrid-2 md:agrid-3 lg:agrid-4">
-    <li class="acol-2">1st</li>
+    <li class="sm:acol-2">1st</li>
     <li>2nd</li>
     <li>3rd</li>
     <li>4th</li>

@@ -64,14 +64,14 @@ Offset supports both static and responsive uses.
 }
 
 .offset--static{
-  --blue-3: #74c0fc;
-  --blue-7: #1c7ed6;
+  --violet-3: #b197fc;
+  --violet-7: #7048e8;
 }
 .offset--static li {
-  background-color: var(--blue-3);
+  background-color: var(--violet-3);
 }
 
 .offset--static li[class*="offset"] {
-  background-color: var(--blue-7);
+  background-color: var(--violet-7);
 }
 </style>
