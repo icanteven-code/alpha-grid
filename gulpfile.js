@@ -22,7 +22,6 @@ function buildCSS(callback) {
     gulp.src('./src/agrid/scss/*.scss')
         .pipe(sass().on("error", sass.logError))
         .pipe(size({ showFiles: true }))
-        .pipe(gulp.dest('./dist'))
         .pipe(postcss([autoprefixer(), adjustMQ()]))
         .pipe(csso())
         .pipe(rename({
