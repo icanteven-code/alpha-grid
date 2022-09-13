@@ -50,6 +50,57 @@ Offset supports both static and responsive uses.
 </ul>
 ```
 
+## Utility classes
+You can set the breakpoints as prefixes to each class - `sm:`, `md:`, etc.
+
+```css
+.offset-1 {
+  --agrid-column-start: 2;
+}
+
+.offset-2 {
+  --agrid-column-start: 3;
+}
+
+.offset-3 {
+  --agrid-column-start: 4;
+}
+
+.offset-4 {
+  --agrid-column-start: 5;
+}
+
+.offset-5 {
+  --agrid-column-start: 6;
+}
+
+.offset-6 {
+  --agrid-column-start: 7;
+}
+
+.offset-7 {
+  --agrid-column-start: 8;
+}
+
+.offset-8 {
+  --agrid-column-start: 9;
+}
+
+.offset-9 {
+  --agrid-column-start: 10;
+}
+
+.offset-10 {
+  --agrid-column-start: 11;
+}
+
+.offset-11 {
+  --agrid-column-start: 12;
+}
+```
+
+
+
 <style>
 .offset{
   --blue-3: #74c0fc;

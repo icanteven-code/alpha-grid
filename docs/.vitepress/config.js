@@ -16,7 +16,8 @@ export default {
                     {
                         text: 'Getting Started', link: '/guide/quick-start', items: [
                             { text: 'CSS', link: '/guide/css' },
-                            { text: 'SASS', link: '/guide/sass' }
+                            { text: 'SASS', link: '/guide/sass' },
+                            { text: 'Customization', link: '/guide/customization' },
                         ]
                     },
                     {

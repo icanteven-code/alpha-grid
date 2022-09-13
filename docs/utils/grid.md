@@ -251,6 +251,52 @@ On mobile each element will be full width (12 cols), at 640px (`sm`) will be 2 c
 ```
 
 ## Breakpoints and gaps
+`agrid` has a default support for responsive gap sizes. Here is the source code to look at the workflow. Customizing the `$agrid-breakpoints` or `$agrid-gaps` can change this default behaviour, so keep this in mind when configurating.
+
+```scss
+// $agrid-breakpoints, "sm" - 640px;
+// $agrid-gaps, 3 - 0.75rem;
+@if map.has-key($agrid-breakpoints, "sm") {
+  @media (min-width: map.get($agrid-breakpoints, "sm")) {
+    :where([class*="agrid"]) {
+      --agrid-gap: #{map.get($agrid-gaps, 3)};
+    }
+  }
+}
+
+// $agrid-breakpoints, "md" - 768px;
+// $agrid-gaps, 3 - 1rem;
+@if map.has-key($agrid-breakpoints, "md") {
+  @media (min-width: map.get($agrid-breakpoints, "md")) {
+    :where([class*="agrid"]) {
+      --agrid-gap: #{map.get($agrid-gaps, 4)};
+    }
+  }
+}
+
+// $agrid-breakpoints, "lg" - 1024px;
+// $agrid-gaps, 5 - 1.25rem;
+@if map.has-key($agrid-breakpoints, "lg") {
+  @media (min-width: map.get($agrid-breakpoints, "lg")) {
+    :where([class*="agrid"]) {
+      --agrid-gap: #{map.get($agrid-gaps, 5)};
+    }
+  }
+}
+
+// $agrid-breakpoints, "xxxl" - 1536px;
+// $agrid-gaps, 6 - 1.5rem;
+@if map.has-key($agrid-breakpoints, "xxxl") {
+  @media (min-width: map.get($agrid-breakpoints, "xxxl")) {
+    :where([class*="agrid"]) {
+      --agrid-gap: #{map.get($agrid-gaps, 6)};
+    }
+  }
+}
+```
+
+
+
 
 <style>
   /* Classic */

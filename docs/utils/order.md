@@ -34,6 +34,62 @@ _Order responsive example - 12 column style_
 </ul>
 ```
 
+## Utility classes
+You can set the breakpoints as prefixes to each class - `sm:`, `md:`, etc.
+
+```css
+.order-first {
+  --agrid-order: -1;
+}
+
+.order-last {
+  --agrid-order: 12;
+}
+
+.order-1 {
+  --agrid-order: 1;
+}
+
+.order-2 {
+  --agrid-order: 2;
+}
+
+.order-3 {
+  --agrid-order: 3;
+}
+
+.order-4 {
+  --agrid-order: 4;
+}
+
+.order-5 {
+  --agrid-order: 5;
+}
+
+.order-6 {
+  --agrid-order: 6;
+}
+
+.order-7 {
+  --agrid-order: 7;
+}
+
+.order-8 {
+  --agrid-order: 8;
+}
+
+.order-9 {
+  --agrid-order: 9;
+}
+
+.order-10 {
+  --agrid-order: 10;
+}
+
+.order-11 {
+  --agrid-order: 11;
+}
+```
 
 <style>
 /* ------------------ */

@@ -39,7 +39,9 @@ See the difference for yourself:
 </ul>
 ```
 
-## Values
+## Utility classes
+You can set the breakpoints as prefixes to each class - `sm:`, `md:`, etc.
+
 Each step is equal to `0.25rem` : `gap-1` = `0.25rem`, `gap-2` = `0.5rem`, `gap-3` = `0.75rem`, etc.
 
 ```css
@@ -91,6 +93,7 @@ Each step is equal to `0.25rem` : `gap-1` = `0.25rem`, `gap-2` = `0.5rem`, `gap-
   --agrid-gap: 3rem;
 }
 ```
+
 
 <style scoped>
 /* ------------------ */
