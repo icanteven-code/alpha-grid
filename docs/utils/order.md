@@ -1,5 +1,9 @@
 # Order
 
+::: tip
+If you're using another utility framework (like Tailwind or WindiCSS) that supports the `order` property you can skip this module and use the base `agrid` module.
+:::
+
 In CSS Grid you have access to a order property, with a default value of 0. To move around specific elements we can use the acol-order- class to change the order value. acol-order- supports both static and responsive syntax. Examples:
 
 `order-first` sends the element to the start of the grid with order: -1

@@ -1,5 +1,9 @@
 # Gap
 
+::: tip
+If you're using another utility framework (like Tailwind or WindiCSS) that supports the `gap` property you can skip this module and use the base `agrid` module.
+:::
+
 aGrid has default gap sizes already defined, which you can customize pretty simply either via SASS or just writing some custom css after you import the library. In other cases you may need a way to often move around different gap sizes, that's why you can additionally use the `gap-[n]` class to set specific gap sizes.
 
 Supports both static and responsive syntaxes.
