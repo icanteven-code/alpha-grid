@@ -12,7 +12,7 @@ export default {
             {
                 text: 'Guide',
                 items: [
-                    { text: 'Introduction', link: '/guide/what-is-agrid' },
+                    { text: 'Introduction', link: '/guide/what-is-alpha-grid' },
                     {
                         text: 'Getting Started', link: '/guide/quick-start', items: [
                             { text: 'CSS', link: '/guide/css' },
