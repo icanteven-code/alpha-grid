@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.5.0](https://github.com/icanteven-code/alpha-grid/compare/v1.4.0...v1.5.0) (2022-09-13)
+
+
+### Features
+
+* Add new lightweight grid syntax ([6d9195c](https://github.com/icanteven-code/alpha-grid/commit/6d9195c19d2859f47930d2b53b70bfe3219ccc0f))
+* Closes [#4](https://github.com/icanteven-code/alpha-grid/issues/4); Enable customizing columns, gaps, breakpoints ([62978aa](https://github.com/icanteven-code/alpha-grid/commit/62978aa9c1cad3024b8dc50ee2ca5f4576803743))
+* Closes [#8](https://github.com/icanteven-code/alpha-grid/issues/8); Shorter and cleaner classes; Remove where() ([8a5fcfe](https://github.com/icanteven-code/alpha-grid/commit/8a5fcfee050cc3982aeae43955fa17362a177146))
+* Support gap utility classes closes [#7](https://github.com/icanteven-code/alpha-grid/issues/7) ([ce69241](https://github.com/icanteven-code/alpha-grid/commit/ce692418c8a8e270d539d209ad0a2774d1e61690))
+
+
+### Bug Fixes
+
+* Closes [#9](https://github.com/icanteven-code/alpha-grid/issues/9) don't ship uncompressed css files in /dist ([a9551d5](https://github.com/icanteven-code/alpha-grid/commit/a9551d509fd41493fbabeb59a28d83a30923ae63))
+* Fallback responsive cases - columns and offset ([2ddf8af](https://github.com/icanteven-code/alpha-grid/commit/2ddf8af787b8385662192c4d70a40370f75aee1e))
+* Gap and default gaps combination; Added gap docs; Re-build the lib ([8e82cbf](https://github.com/icanteven-code/alpha-grid/commit/8e82cbf4486b69013c6650e552dea7a9b980a4e3))
+
 ## [1.4.0](https://github.com/icanteven-code/alpha-grid/compare/v1.3.1...v1.4.0) (2022-04-21)
 
 

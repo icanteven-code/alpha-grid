@@ -1,6 +1,6 @@
 {
   "name": "alpha-grid",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "description": "Simple 12 column grid system build on css grid and inspired by Bootstrap ",
   "main": "dist/agrid.min.css",
   "files": [
