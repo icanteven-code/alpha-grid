@@ -91,7 +91,7 @@ You can set the breakpoints as prefixes to each class - `sm:`, `md:`, etc.
 }
 ```
 
-<style>
+<style scoped>
 /* ------------------ */
 /* Order */
 .order{

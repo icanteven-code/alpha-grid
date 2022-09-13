@@ -101,7 +101,7 @@ You can set the breakpoints as prefixes to each class - `sm:`, `md:`, etc.
 
 
 
-<style>
+<style scoped>
 .offset{
   --blue-3: #74c0fc;
   --blue-7: #1c7ed6;

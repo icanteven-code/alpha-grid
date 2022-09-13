@@ -8,7 +8,7 @@ aGrid supports 2 syntaxes - a **classic** style, were you directly define the nu
 This way you don't need to specify how many columns a child element should span. You create a grid with 2, 3 or however many columns and let the items to nest automatically, like a simple grid. This is done via using only th `agrid-[n]` class with the number of columns you want to create - `agrid-1`, `agrid-2`, `agrid-3`, ..., `agrid-11`. The normal `agrid` class creates 12 columns, so you can use it directly for those cases.
 
 ::: tip
-The number of available `agrid-[n]` classes is alway 1 less than the number of columns set in the library (default 12). The number of `agrid-[n]` classes can be customized fully via SASS. More on this you can find here: [Customizing aGrid](../config/customizing.md).
+The number of available `agrid-[n]` is alway 1 less than the number of columns set in the library (default 12). The number of `agrid-[n]` and `acol-[n]` classes can be customized fully via SASS. More on this you can find here: [Customizing aGrid](../guide/customization.md).
 :::
 
 ### Static grid
@@ -109,10 +109,6 @@ When you set `agrid` as a class on a container, its children can use the `acol-`
   <li class="acol-6">Spans over 6 columns</li>
 </ul>
 ```
-
-::: tip
-The number of columns and respectively the available `acol-[n]` classes can be customized fully via SASS. More on this you can find here: [Customizing aGrid](../config/customizing.md).
-:::
 
 ### Static columns
 
@@ -298,7 +294,7 @@ On mobile each element will be full width (12 cols), at 640px (`sm`) will be 2 c
 
 
 
-<style>
+<style scoped>
   /* Classic */
   .classic--static{
     --teal-5: #20c997;
