@@ -21,7 +21,8 @@ section {
 /* ------------------ */
 /* Basic li item */
 
-.agrid li {
+.agrid li,
+[class*="agrid"] li {
   padding: 0.25rem;
   height: 4rem;
   border-radius: 8px;

@@ -1,34 +1,36 @@
 @use "./base";
 
-@mixin generate-static-order {
-    .acol-order-first {
-      order: -1;
-    }
-    .acol-order-last {
-      order: 12;
-    }
-    @for $i from 1 through 11 {
-      .acol-order-#{$i} {
-        order: $i;
-      }
+$agrid-order-count: 12 !default;
+
+@mixin generate-static {
+  .order-first {
+    --agrid-order: -1;
+  }
+  .order-last {
+    --agrid-order: #{$agrid-order-count};
+  }
+  @for $i from 1 through ($agrid-order-count - 1) {
+    .order-#{$i} {
+      --agrid-order: #{$i};
     }
   }
-  
-  @mixin generate-resp-order {
-    @each $key, $value in base.$agrid-breakpoints {
-      .#{$key}\:acol-order-first {
-        order: -1;
-      }
-      .#{$key}\:acol-order-last {
-        order: 12;
-      }
-  
-      @media (min-width: #{$value}) {
-        @for $i from 1 through 11 {
-          .#{$key}\:acol-order-#{$i} {
-            order: $i;
-          }
+}
+
+@mixin generate-responsive {
+  @each $key, $value in base.$agrid-breakpoints {
+    .#{$key}\:order-first {
+      --agrid-order: -1;
+    }
+    .#{$key}\:order-last {
+      --agrid-order: #{$agrid-order-count};
+    }
+
+    @media (min-width: #{$value}) {
+      @for $i from 1 through ($agrid-order-count - 1) {
+        .#{$key}\:order-#{$i} {
+          --agrid-order: #{$i};
         }
       }
     }
   }
+}

@@ -1,0 +1,33 @@
+@import url("../../../dist/agrid.min.css");
+
+:root {
+  --vp-c-brand: #82c91e;
+  --vp-c-brand-light: #94d82d;
+  --vp-c-brand-lighter: #a9e34b;
+  --vp-c-brand-dark: #74b816;
+  --vp-c-brand-darker: #66a80f;
+  --vp-button-brand-text: var(--vp-c-white-soft);
+}
+
+ul[class*="agrid"] {
+  padding: 0px;
+  margin: 0px;
+  list-style: none;
+}
+
+[class*="agrid"] > li {
+  padding: 0.25rem;
+  height: 4rem;
+  border-radius: 8px;
+  color: var(--gray-9);
+  font-size: 1.25rem;
+  font-weight: bold;
+  font-family: monospace;
+  margin: 0 !important;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  word-break: break-all;
+  text-align: center;
+}

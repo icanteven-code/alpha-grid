@@ -1,0 +1,31 @@
+@use "./modules/base" as * with (
+  $agrid-column-system: 4,
+  $agrid-breakpoints: (
+    "xs": 500px,
+    "md": 700px,
+    "lg": 1000px,
+  ),
+  $agrid-gaps: (
+    "sm": 1,
+    "md": 2,
+    "lg": 3,
+  )
+);
+@use "./modules/columns";
+@use "./modules/offset";
+@use "./modules/order" with (
+  $agrid-order-count: 4
+);
+@use "./modules/gaps";
+
+@include columns.generate-static-cols;
+@include columns.generate-resp-cols;
+
+@include offset.generate-static-offset;
+@include offset.generate-resp-offset;
+
+@include order.generate-static-order;
+@include order.generate-resp-order;
+
+@include gaps.generate-static;
+@include gaps.generate-responsive;

@@ -1,33 +1,93 @@
-$agrid-column-system: 12;
+// ------
+// Variables and configs
+// ------
+@use "sass:map";
+$agrid-column-system: 12 !default;
 $agrid-breakpoints: (
-  "sm": 576px,
+  "xs": 576px,
+  "sm": 640px,
   "md": 768px,
-  "lg": 992px,
-  "xl": 1200px,
+  "lg": 1024px,
+  "xl": 1280px,
+  "xxl": 1440px,
+  "xxxl": 1536px,
 ) !default;
 
-.agrid {
+$agrid-gaps: null !default;
+@if $agrid-gaps == null {
+  $agrid-gaps: ();
+  @for $i from 1 through 12 {
+    $agrid-gaps: map.set($agrid-gaps, $i, $i * 0.25rem);
+  }
+}
+
+// ------
+// Grid setup
+// ------
+
+// Setup classic 12 cols grid
+[class*="agrid"] {
   display: grid;
-  grid-template-columns: repeat(12, minmax(0, 1fr));
-  gap: var(--agrid-gap, 0.25rem);
+  grid-template-columns: repeat($agrid-column-system, minmax(0, 1fr));
   padding-inline: var(--agrid-x-padding, 0px);
   margin-inline: var(--agrid-x-margin, 0px);
+  transition: gap 300ms ease-in-out;
+  // Configurable via modules
+  gap: var(--agrid-gap, #{map.get($agrid-gaps, 2)});
 }
 
-@media (min-width: 768px) {
-  .agrid {
-    --agrid-gap: var(--agrid-gap-md, 0.75rem);
+// Configurable via modules
+[class*="agrid"] > * {
+  grid-column-start: var(--agrid-column-start, auto);
+  order: var(--agrid-order, 0);
+}
+
+// Setup grids with dynamic columns
+@for $i from 1 through ($agrid-column-system - 1) {
+  .agrid-#{$i} {
+    grid-template-columns: repeat($i, minmax(0, 1fr));
+  }
+}
+// Setup responsive dynamic columns grids
+@each $key, $value in $agrid-breakpoints {
+  @media (min-width: #{$value}) {
+    @for $col-num from 1 through ($agrid-column-system - 1) {
+      .#{$key}\:agrid-#{$col-num} {
+        grid-template-columns: repeat($col-num, minmax(0, 1fr));
+      }
+    }
   }
 }
 
-@media (min-width: 992px) {
-  .agrid {
-    --agrid-gap: var(--agrid-gap-lg, 1rem);
+// ------
+// Gap setup and responsive values
+// ------
+@if map.has-key($agrid-breakpoints, "sm") {
+  @media (min-width: map.get($agrid-breakpoints, "sm")) {
+    :where([class*="agrid"]) {
+      --agrid-gap: #{map.get($agrid-gaps, 3)};
+    }
   }
 }
 
-@media (min-width: 1200px) {
-  .agrid {
-    --agrid-gap: var(--agrid-gap-xl, 1.5rem);
+@if map.has-key($agrid-breakpoints, "md") {
+  @media (min-width: map.get($agrid-breakpoints, "md")) {
+    :where([class*="agrid"]) {
+      --agrid-gap: #{map.get($agrid-gaps, 4)};
+    }
+  }
+}
+@if map.has-key($agrid-breakpoints, "lg") {
+  @media (min-width: map.get($agrid-breakpoints, "lg")) {
+    :where([class*="agrid"]) {
+      --agrid-gap: #{map.get($agrid-gaps, 5)};
+    }
+  }
+}
+@if map.has-key($agrid-breakpoints, "xxxl") {
+  @media (min-width: map.get($agrid-breakpoints, "xxxl")) {
+    :where([class*="agrid"]) {
+      --agrid-gap: #{map.get($agrid-gaps, 6)};
+    }
   }
 }
