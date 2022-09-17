@@ -1,23 +1,26 @@
 # 🧱 αGrid - Light CSS Grid system
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/d8cddbf0-a67c-4a0d-a6e7-4745500f75ae/deploy-status)](https://app.netlify.com/sites/alpha-grid/deploys) <br/>
+[![npm](https://badgen.net/npm/v/alpha-grid)](https://www.npmjs.com/package/alpha-grid)
+
+[![bundlephobia min](https://badgen.net/bundlephobia/min/alpha-grid)](https://bundlephobia.com/package/alpha-grid@1.5.0) 
+
+[![bundlephobia minzip](https://badgen.net/bundlephobia/minzip/alpha-grid)](https://bundlephobia.com/package/alpha-grid@1.5.0) 
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/d8cddbf0-a67c-4a0d-a6e7-4745500f75ae/deploy-status)](https://app.netlify.com/sites/alpha-grid/deploys) 
 
 
-The entire `agrid.min.css` package is ~ 19.0 kB (2.1 kB gzip), but if use only the base grid-systems without the `order`, `offset` and `gap` you will have a bundle of ~ 9.4 kB (1.0 kB gzip).
+The entire `agrid.min.css` package is ~ 19.0 kB (2.1 kB gzip), but the core grid-systems is ~ 9.4 kB (1.0 kB gzip).
 
-
-📌 **Examples** - [alpha-grid.netlify.app](https://alpha-grid.netlify.app/) <br/>
+<br />
+📌 **Examples** - [alpha-grid.netlify.app](https://alpha-grid.netlify.app/) 
+<br />
+<br />
 
 **alphaGrid** is a tool for implementing 12 Column Grid layouts. Very simple. Mostly configurable. CSS & SCSS. 
-Based on CSS Grid ([93.53% support](https://caniuse.com/?search=grid)) and it's pretty much an "inspired" clone of Bootstrap's own grid layout.
+Based on CSS Grid ([96.3% support](https://caniuse.com/?search=grid)) and it's pretty much a thinkered version of Bootstrap's 12-Column-Grid system.
 
 
-- [🧱 αGrid - Light CSS Grid system](#-αgrid---light-css-grid-system)
-  - [Getting started](#getting-started)
-    - [NPM](#npm)
-    - [CDN](#cdn)
-  - [Bundles](#bundles)
-  - [Why](#why)
+
 
 ------
 
