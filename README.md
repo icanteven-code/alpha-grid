@@ -1,19 +1,13 @@
 # 🧱 αGrid - Light CSS Grid system
 
-[![npm](https://badgen.net/npm/v/alpha-grid)](https://www.npmjs.com/package/alpha-grid)
-
-[![bundlephobia min](https://badgen.net/bundlephobia/min/alpha-grid)](https://bundlephobia.com/package/alpha-grid@1.5.0) 
-
-[![bundlephobia minzip](https://badgen.net/bundlephobia/minzip/alpha-grid)](https://bundlephobia.com/package/alpha-grid@1.5.0) 
-
-[![Netlify Status](https://api.netlify.com/api/v1/badges/d8cddbf0-a67c-4a0d-a6e7-4745500f75ae/deploy-status)](https://app.netlify.com/sites/alpha-grid/deploys) 
+[![npm](https://badgen.net/npm/v/alpha-grid)](https://www.npmjs.com/package/alpha-grid)   [![bundlephobia min](https://badgen.net/bundlephobia/min/alpha-grid)](https://bundlephobia.com/package/alpha-grid@1.5.0)    [![bundlephobia minzip](https://badgen.net/bundlephobia/minzip/alpha-grid)](https://bundlephobia.com/package/alpha-grid@1.5.0)    [![Netlify Status](https://api.netlify.com/api/v1/badges/d8cddbf0-a67c-4a0d-a6e7-4745500f75ae/deploy-status)](https://app.netlify.com/sites/alpha-grid/deploys) 
 
 
-The entire `agrid.min.css` package is ~ 19.0 kB (2.1 kB gzip), but the core grid-systems is ~ 9.4 kB (1.0 kB gzip).
+Agrid's entire CSS bundle is ~ 19.0 kB (2.1 kB gzip), but the core grid-systems is ~ 9.4 kB (1.0 kB gzip).
 
 <br />
 📌 **Examples** - [alpha-grid.netlify.app](https://alpha-grid.netlify.app/) 
-<br />
+<br/>
 <br />
 
 **alphaGrid** is a tool for implementing 12 Column Grid layouts. Very simple. Mostly configurable. CSS & SCSS. 
