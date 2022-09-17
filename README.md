@@ -6,7 +6,8 @@
 Agrid's entire CSS bundle is ~ 19.0 kB (2.1 kB gzip), but the core grid-systems is ~ 9.4 kB (1.0 kB gzip).
 
 <br />
-📌 **Examples** - [alpha-grid.netlify.app](https://alpha-grid.netlify.app/) 
+
+📌 **Documentation and examples** - [alpha-grid.netlify.app](https://alpha-grid.netlify.app/)
 <br/>
 <br />
 
