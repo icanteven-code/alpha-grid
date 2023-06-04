@@ -1,0 +1,13 @@
+@use "sass:string";
+
+$prefix: 'a' !default;
+
+@mixin extract-css-variables($map) {
+  :root {
+
+    @each $key,
+    $value in $map {
+      --#{$prefix}-#{$key}: #{$value};
+    }
+  }
+}

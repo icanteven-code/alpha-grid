@@ -1,0 +1,49 @@
+@use '../tokens/scale';
+@use '../tokens/breakpoints';
+
+$prop: 'gap';
+
+
+@mixin setBase($class, $property) {
+    @each $gapKey,
+    $gapValue in scale.$scaleBase {
+        .#{$class}-#{$gapKey} {
+            #{$property}: #{$gapValue};
+        }
+    }
+}
+
+@mixin setResponsive($class, $property) {
+    @each $gapKey,
+    $gapValue in scale.$scaleBase {
+        .#{$class}-#{$gapKey} {
+            #{$property}: #{$gapValue};
+        }
+    }
+}
+
+@mixin get-classes {
+    @include setBase('gap', 'gap');
+    @include setBase('gap-x', 'column-gap');
+    @include setBase('gap-y', 'row-gap');
+
+    @each $key,
+    $value in breakpoints.$breakpoints {
+
+        @media (min-width: #{$value}) {
+
+            @each $gapKey,
+            $gapValue in scale.$scaleBase {
+                .#{$key}\:#{$prop}-#{$gapKey} {
+                    gap: #{$gapValue};
+                }
+                .#{$key}\:#{$prop}-x-#{$gapKey} {
+                    column-gap: #{$gapValue};
+                }
+                .#{$key}\:#{$prop}-y-#{$gapKey} {
+                    row-gap: #{$gapValue};
+                }
+            }
+        }
+    }
+}

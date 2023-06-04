@@ -1,0 +1,7 @@
+@mixin extract-class($attribute, $map) {
+    @each $key, $value in $map {
+      .#{$key} {
+        #{$attribute}: $value;
+      }
+    }
+  }

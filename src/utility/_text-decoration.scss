@@ -1,0 +1,11 @@
+@use '../helpers/class-extractor' as *;
+
+$decoration: (
+    // underline: underline,
+    // line-through: line-through,
+    no-underline: none
+);
+
+@mixin get-classes {
+    @include extract-class('text-decoration', $decoration);
+}

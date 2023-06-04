@@ -1,0 +1,13 @@
+@use './composition/owl';
+
+@use './utility/shadow';
+@use './utility/text-decoration';
+
+@use './utility/gap';
+
+@include gap.get-classes();
+
+@include shadow.get-classes();
+@include shadow.get-vars();
+
+@include text-decoration.get-classes();
